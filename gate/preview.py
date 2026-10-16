@@ -1,0 +1,145 @@
+"""A self-contained HTML page that shows a gate run the way people would see it:
+the squad digest in Slack, each brief's ClickUp task, the #int alert and the
+client draft. It renders the real run output; nothing is mocked here."""
+
+import json
+
+TEMPLATE = r"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Production gate preview</title>
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--line:#e4e2dc;--text:#1f1e1c;--muted:#6b6963;--ok:#1d7a46;--okbg:#e3f3e8;--bad:#b42318;--badbg:#fdeceb;--warn:#8a5a00;--warnbg:#fdf3dc;--int:#5b4bb7;--intbg:#eeecfb;--accent:#2457c5}
+@media (prefers-color-scheme:dark){:root{--bg:#1b1b1a;--card:#252523;--line:#3a3936;--text:#ecebe7;--muted:#a3a19b;--ok:#6fd39a;--okbg:#1f3a2a;--bad:#ff8a80;--badbg:#45201d;--warn:#f2c46b;--warnbg:#3f3216;--int:#b3a9f5;--intbg:#2e2a4a;--accent:#8fb0ff}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+h1{font-size:18px;margin:0;font-weight:600}h2{font-size:13px;color:var(--muted);font-weight:500;margin:0 0 8px;text-transform:none}
+.sub{color:var(--muted);font-size:13px}.stats{display:flex;gap:8px;margin-left:auto}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 12px;text-align:center}.stat b{display:block;font-size:18px}
+main{display:grid;grid-template-columns:320px minmax(0,1fr);gap:16px;padding:16px 20px;max-width:1400px}
+@media (max-width:900px){main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:12px}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}.filters button{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:6px;padding:3px 10px;cursor:pointer;font-size:12px}
+.filters button.on{border-color:var(--accent);color:var(--accent)}
+.list{max-height:calc(100vh - 170px);overflow:auto;padding:0}.row{display:flex;justify-content:space-between;gap:8px;padding:8px 12px;border-bottom:1px solid var(--line);cursor:pointer}
+.row:hover{background:var(--bg)}.row.sel{background:var(--bg);box-shadow:inset 3px 0 0 var(--accent)}.row small{color:var(--muted);display:block}
+.pill{font-size:11px;padding:2px 8px;border-radius:6px;white-space:nowrap;align-self:center}
+.PASS{background:var(--okbg);color:var(--ok)}.client{background:var(--badbg);color:var(--bad)}.approval{background:var(--warnbg);color:var(--warn)}.internal{background:var(--intbg);color:var(--int)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}
+.bar{font-size:12px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:8px}
+.msg{display:flex;gap:10px}.av{width:30px;height:30px;border-radius:6px;background:var(--intbg);color:var(--int);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0}
+.who{font-weight:600}.who span{font-weight:400;color:var(--muted);font-size:12px;margin-left:6px}
+ul{margin:4px 0 0;padding-left:18px}.checks{list-style:none;padding:0}.checks li{padding:2px 0}
+.q{border-left:3px solid var(--line);padding:6px 10px;margin-top:8px;color:var(--muted);white-space:pre-wrap}
+.btns{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.btns span{border:1px solid var(--line);border-radius:6px;padding:3px 10px;font-size:12px;color:var(--muted)}
+.empty{color:var(--muted);font-style:italic}.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;font-size:12px;margin:8px 0}.kv div span{display:block;color:var(--muted)}
+.digest li{margin:3px 0}code{font-size:12px}
+</style></head><body>
+<header><div><h1>Production gate · preview</h1><div class="sub" id="when"></div></div>
+<div class="stats"><div class="stat"><b id="n-all"></b>checked</div><div class="stat"><b id="n-pass" style="color:var(--ok)"></b>queued</div><div class="stat"><b id="n-block" style="color:var(--bad)"></b>blocked</div></div></header>
+<main>
+<section>
+  <div class="filters" id="f-status"></div>
+  <div class="filters" id="f-squad"></div>
+  <div class="card list" id="list"></div>
+</section>
+<section>
+  <div class="grid2" id="digests"></div>
+  <div id="detail"></div>
+</section>
+</main>
+<script>
+const DATA = __DATA__;
+const LABEL = {client:"Blocked", approval:"Needs approval", internal:"Blocked (internal)"};
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const cls = b => b.status === "PASS" ? "PASS" : b.kind;
+const lab = b => b.status === "PASS" ? (b.approvals.length ? `Queued (${b.approvals.join(", ")} ok)` : "Queued") : LABEL[b.kind];
+const briefs = DATA.results.briefs, actions = Object.fromEntries(DATA.clickup.map(a => [a.task, a]));
+let fStatus = "all", fSquad = "all", sel = briefs.find(b => b.status === "BLOCKED").brief_id;
+
+document.getElementById("when").textContent = "Checked " + new Date(DATA.results.checked_at).toUTCString() + " · Brain checks: " +
+  `${DATA.results.summary.brain.cache_hits} cached, ${DATA.results.summary.brain.live_calls} live, ${DATA.results.summary.brain.unchecked} unchecked`;
+document.getElementById("n-all").textContent = DATA.results.summary.checked;
+document.getElementById("n-pass").textContent = DATA.results.summary.queued;
+document.getElementById("n-block").textContent = DATA.results.summary.blocked;
+
+function filters(id, opts, get, set) {
+  const el = document.getElementById(id);
+  el.innerHTML = opts.map(([v, t]) => `<button data-v="${esc(v)}" class="${get() === v ? "on" : ""}">${esc(t)}</button>`).join("");
+  el.querySelectorAll("button").forEach(b => b.onclick = () => { set(b.dataset.v); draw(); });
+}
+
+function short(b) {
+  const banned = b.reasons.filter(r => r.code === "banned_claim").map(r => r.evidence);
+  const parts = banned.length ? ["banned claims: " + banned.map(x => `'${x}'`).join(", ")] : [];
+  for (const r of b.reasons) {
+    if (r.code === "banned_claim") continue;
+    if (r.code === "brain_rule" && banned.some(x => (r.evidence || "").toLowerCase().includes(x.toLowerCase()))) continue;
+    parts.push(r.code === "brain_rule" ? `breaks Brain rule: '${r.evidence}'` : r.detail.replace(/\.$/, ""));
+  }
+  return [...new Set(parts)].join("; ");
+}
+
+function digest(squad) {
+  const mine = briefs.filter(b => b.squad === squad), blocked = mine.filter(b => b.status === "BLOCKED");
+  const quotas = Object.entries(DATA.results.quota_after_run).filter(([c]) => mine.some(b => b.client === c) || DATA.squadOf[c] === squad);
+  return `<div class="card"><div class="bar"># ${esc(slug(squad))} · daily digest 09:00</div>
+  <div class="msg"><div class="av">PG</div><div style="min-width:0"><div class="who">Production gate<span>APP</span></div>
+  <div><b>${mine.length}</b> checked · <b style="color:var(--ok)">${mine.length - blocked.length}</b> queued · <b style="color:var(--bad)">${blocked.length}</b> blocked</div>
+  <ul class="digest">${blocked.map(b => `<li><code>${b.brief_id}</code> ${esc(b.client)} · <span class="pill ${cls(b)}">${lab(b)}</span> ${esc(short(b))}</li>`).join("") || "<li>None</li>"}</ul>
+  <div style="margin-top:8px;color:var(--muted);font-size:12px">${quotas.map(([c, q]) => `${esc(c)}: statics ${q.statics.used}/${q.statics.plan} · videos ${q.videos.used}/${q.videos.plan}`).join("<br>")}</div>
+  </div></div></div>`;
+}
+
+function detail(b) {
+  const a = actions[b.brief_id], counts = Object.entries(b.deliverables).filter(([, n]) => n).map(([k, n]) => `${n} ${k}`).join(", ");
+  const checks = Object.entries(b.checks).map(([k, s]) => `<li>${s.startsWith("failed") ? "✗" : "✓"} Rule ${esc(k)} <span style="color:var(--muted)">· ${esc(s)}</span></li>`).join("");
+  const clickup = `<div class="card"><div class="bar">ClickUp · ${esc(b.client)} / ${esc(b.brief_id)} · seen by the squad</div>
+    <div style="display:flex;justify-content:space-between;gap:8px"><b>${esc(b.title)}</b><span class="pill ${cls(b)}">${esc(a.set_status)}</span></div>
+    <div class="kv"><div><span>Gate result</span>${esc(a.set_custom_fields["Gate result"])}</div><div><span>Due</span>${esc(b.due_date)} (${b.business_days ?? "?"} business days)</div>
+    <div><span>Deliverables</span>${esc(counts)}</div><div><span>Products</span>${esc(b.skus.join(", ") || "-")}</div></div>
+    <ul class="checks">${checks}</ul>
+    <div class="msg" style="margin-top:10px;border-top:1px solid var(--line);padding-top:10px"><div class="av">PG</div><div><div class="who">Production gate<span>comment</span></div><div style="white-space:pre-wrap">${esc(a.add_comment)}</div></div></div></div>`;
+  if (b.status === "PASS") return clickup;
+
+  const buttons = [];
+  if (b.client_message) buttons.push("Post to client channel", "Edit draft");
+  if (b.reasons.some(r => r.code === "turnaround")) buttons.push("Approve rush");
+  if (b.reasons.some(r => r.code === "quota_exceeded")) buttons.push("Approve overage");
+  if (b.client_message_if_declined) buttons.push("Ask client instead");
+  if (b.reasons.some(r => r.code === "brain_unsure")) buttons.push("Copy is fine, re-run");
+  buttons.push("Override block");
+  const alert = `<div class="card"><div class="bar">Slack · #int-${esc(slug(b.client))} · internal only</div>
+    <div class="msg"><div class="av">PG</div><div style="min-width:0"><div class="who">Production gate<span>APP · @${esc(b.squad_lead)}</span></div>
+    <div><span class="pill ${cls(b)}">${lab(b)}</span> <b>${esc(b.brief_id)} · ${esc(b.title)}</b></div>
+    <ul>${b.reasons.map(r => `<li>Rule ${r.rule} <code>${esc(r.code)}</code>: ${esc(r.detail)}</li>`).join("")}</ul>
+    ${b.client_message ? `<div style="margin-top:8px;font-weight:600">Draft for #ext-${esc(slug(b.client))}</div><div class="q">${esc(b.client_message)}</div>` : ""}
+    ${b.client_message_if_declined ? `<div style="margin-top:8px;font-weight:600">If you don't approve, send the client:</div><div class="q">${esc(b.client_message_if_declined)}</div>` : ""}
+    <div class="btns" title="Buttons are design only: they need a Slack app">${buttons.map(t => `<span>${esc(t)}</span>`).join("")}</div></div></div></div>`;
+  const ext = b.client_message
+    ? `<div class="card"><div class="bar">Slack · #ext-${esc(slug(b.client))} · shared with the client, after the Squad Lead posts</div>
+       <div class="msg"><div class="av" style="background:var(--okbg);color:var(--ok)">${esc(b.squad_lead.slice(0, 2).toUpperCase())}</div><div><div class="who">${esc(b.squad_lead)}<span>Kāsper</span></div><div style="white-space:pre-wrap">${esc(b.client_message)}</div></div></div></div>`
+    : `<div class="card"><div class="bar">Slack · #ext-${esc(slug(b.client))}</div><div class="empty">${b.kind === "internal" ? "Nothing goes to the client: an internal owner decides." : "Nothing goes to the client unless the Squad Lead declines."}</div></div>`;
+  return `<div class="grid2">${clickup}${alert}</div>${ext}`;
+}
+
+function draw() {
+  filters("f-status", [["all", "All"], ["PASS", "Queued"], ["BLOCKED", "Blocked"]], () => fStatus, v => fStatus = v);
+  filters("f-squad", [["all", "Both squads"], ...[...new Set(briefs.map(b => b.squad))].map(s => [s, s])], () => fSquad, v => fSquad = v);
+  const shown = briefs.filter(b => (fStatus === "all" || b.status === fStatus) && (fSquad === "all" || b.squad === fSquad));
+  const list = document.getElementById("list");
+  list.innerHTML = shown.map(b => `<div class="row ${b.brief_id === sel ? "sel" : ""}" data-id="${b.brief_id}"><div><b>${b.brief_id}</b> ${esc(b.title)}<small>${esc(b.client)}</small></div><span class="pill ${cls(b)}">${lab(b)}</span></div>`).join("");
+  list.querySelectorAll(".row").forEach(r => r.onclick = () => { sel = r.dataset.id; draw(); });
+  const squads = fSquad === "all" ? [...new Set(briefs.map(b => b.squad))] : [fSquad];
+  document.getElementById("digests").innerHTML = squads.map(digest).join("");
+  document.getElementById("detail").innerHTML = detail(briefs.find(b => b.brief_id === sel));
+}
+draw();
+</script></body></html>
+"""
+
+
+def preview_html(results: dict, clickup: list[dict], squad_of: dict[str, str]) -> str:
+    data = json.dumps({"results": results, "clickup": clickup, "squadOf": squad_of}, ensure_ascii=False)
+    # Keep "</script>" inside strings from closing the script tag.
+    return TEMPLATE.replace("__DATA__", data.replace("</", "<\\/"))

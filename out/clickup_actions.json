@@ -1,0 +1,272 @@
+[
+  {
+    "task": "BR-01",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Northpeak Coffee this month after this brief: statics 12/20 · videos 2/6."
+  },
+  {
+    "task": "BR-02",
+    "set_status": "Blocked",
+    "set_custom_fields": {
+      "Gate result": "Blocked (rule 4)",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: blocked.\n- Rule 4: Hazelnut Tin [NP-TIN-HAZ] is not active (Discontinued 2026-09-30).\nOther checks: 1 client active ok, 2 required fields ok, 3 turnaround ok, 5 assets ok, 6 claims ok, 7 quota ok.\nDraft for the client is in #int-northpeak-coffee. The gate re-runs when the brief changes."
+  },
+  {
+    "task": "BR-03",
+    "set_status": "Blocked",
+    "set_custom_fields": {
+      "Gate result": "Blocked (rule 6)",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: blocked.\n- Rule 6: Breaks Brain rule \"Always show the can or bag, never a generic cup.\" ('barista pours into a takeaway cup').\nOther checks: 1 client active ok, 2 required fields ok, 3 turnaround ok, 4 products ok, 5 assets ok, 7 quota ok.\nDraft for the client is in #int-northpeak-coffee. The gate re-runs when the brief changes."
+  },
+  {
+    "task": "BR-04",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Rush approved by Louise: \"Rush approved — Louise. Client has payday on the 16th.\" Northpeak Coffee this month after this brief: statics 15/20 · videos 2/6."
+  },
+  {
+    "task": "BR-05",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Northpeak Coffee this month after this brief: statics 17/20 · videos 2/6."
+  },
+  {
+    "task": "BR-06",
+    "set_status": "Blocked",
+    "set_custom_fields": {
+      "Gate result": "Blocked (rule 6)",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: blocked.\n- Rule 6: Copy uses banned claim 'before and after'.\n- Rule 6: Breaks Brain rule \"No before/after imagery or copy (client legal, Oct 2026).\" ('Before and after: real customer, 14 days of Vitamin C').\nOther checks: 1 client active ok, 2 required fields ok, 3 turnaround ok, 4 products ok, 5 assets ok, 7 quota ok.\nDraft for the client is in #int-lumen-skin. The gate re-runs when the brief changes."
+  },
+  {
+    "task": "BR-07",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Lumen Skin this month after this brief: statics 8/16 · videos 1/4."
+  },
+  {
+    "task": "BR-08",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Lumen Skin this month after this brief: statics 10/16 · videos 1/4."
+  },
+  {
+    "task": "BR-09",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Lumen Skin this month after this brief: statics 12/16 · videos 1/4."
+  },
+  {
+    "task": "BR-10",
+    "set_status": "Blocked",
+    "set_custom_fields": {
+      "Gate result": "Blocked (rule 2)",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: blocked.\n- Rule 2: Missing: platforms, formats (aspect ratio).\nOther checks: 1 client active ok, 3 turnaround ok, 4 products ok, 5 assets ok, 6 claims ok, 7 quota ok.\nDraft for the client is in #int-lumen-skin. The gate re-runs when the brief changes."
+  },
+  {
+    "task": "BR-11",
+    "set_status": "Blocked",
+    "set_custom_fields": {
+      "Gate result": "Blocked (rule 6)",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: blocked.\n- Rule 6: Discount of 50% is above the 30% cap.\nOther checks: 1 client active ok, 2 required fields ok, 3 turnaround ok, 4 products ok, 5 assets ok, 7 quota ok.\nDraft for the client is in #int-ridge-outdoor. The gate re-runs when the brief changes."
+  },
+  {
+    "task": "BR-12",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Ridge Outdoor this month after this brief: statics 7/12 · videos 2/4."
+  },
+  {
+    "task": "BR-13",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Ridge Outdoor this month after this brief: statics 10/12 · videos 2/4."
+  },
+  {
+    "task": "BR-14",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Ridge Outdoor this month after this brief: statics 10/12 · videos 3/4."
+  },
+  {
+    "task": "BR-15",
+    "set_status": "Blocked",
+    "set_custom_fields": {
+      "Gate result": "Needs approval (rule 3)",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: needs approval.\n- Rule 3: Due Wed 14 Oct is 1 business day(s) out; statics need 3. Earliest normal date: Fri 16 Oct. Juliana said rush ok, but only the Squad Lead (Louise) can approve a rush.\nOther checks: 1 client active ok, 2 required fields ok, 4 products ok, 5 assets ok, 6 claims ok, 7 quota ok.\nDraft for the client is in #int-ridge-outdoor. The gate re-runs when the brief changes."
+  },
+  {
+    "task": "BR-16",
+    "set_status": "Blocked",
+    "set_custom_fields": {
+      "Gate result": "Needs approval (rule 7)",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: needs approval.\n- Rule 7: Would take Pawfect Treats over this month's plan: videos 6/4.\nOther checks: 1 client active ok, 2 required fields ok, 3 turnaround ok, 4 products ok, 5 assets ok, 6 claims ok.\nDraft for the client is in #int-pawfect-treats. The gate re-runs when the brief changes."
+  },
+  {
+    "task": "BR-17",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Pawfect Treats this month after this brief: statics 10/12 · videos 4/4."
+  },
+  {
+    "task": "BR-18",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Overage approved by Bea A.: \"Overage approved by Bea A.: client signed the extra-video add-on (1 video, Oct).\" Pawfect Treats this month after this brief: statics 10/12 · videos 5/4."
+  },
+  {
+    "task": "BR-19",
+    "set_status": "Blocked",
+    "set_custom_fields": {
+      "Gate result": "Blocked (rule 6)",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: blocked.\n- Rule 6: Copy uses banned claim 'cure'.\n- Rule 6: Copy uses banned claim 'insomnia'.\n- Rule 6: Copy uses banned claim 'clinically proven'.\n- Rule 6: Breaks Brain rule \"Wellness, not medical: no insomnia, cure or treatment claims.\" ('Clinically proven to cure insomnia in 7 nights').\n- Rule 6: Breaks Brain rule \"'Clinically proven' only with a linked study (none exists today).\" ('Clinically proven').\nOther checks: 1 client active ok, 2 required fields ok, 3 turnaround ok, 4 products ok, 5 assets ok, 7 quota ok.\nDraft for the client is in #int-halo-sleep. The gate re-runs when the brief changes."
+  },
+  {
+    "task": "BR-20",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Halo Sleep this month after this brief: statics 9/12 · videos 2/4."
+  },
+  {
+    "task": "BR-21",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Halo Sleep this month after this brief: statics 11/12 · videos 2/4."
+  },
+  {
+    "task": "BR-22",
+    "set_status": "Blocked",
+    "set_custom_fields": {
+      "Gate result": "Blocked (internal) (rule 1)",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: blocked (internal).\n- Rule 1: Brightside Kids is paused: Paused 2026-10-05 pending overdue invoice. No new production until finance un-pauses.\nOther checks: 2 required fields ok, 3 turnaround ok, 4 products ok, 5 assets ok, 6 claims ok (Brain check skipped), 7 quota ok.\nDraft for the client is in #int-brightside-kids. The gate re-runs when the brief changes."
+  },
+  {
+    "task": "BR-23",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Halo Sleep this month after this brief: statics 11/12 · videos 3/4."
+  },
+  {
+    "task": "BR-24",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Northpeak Coffee this month after this brief: statics 18/20 · videos 2/6."
+  },
+  {
+    "task": "BR-25",
+    "set_status": "Blocked",
+    "set_custom_fields": {
+      "Gate result": "Blocked (rule 6)",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: blocked.\n- Rule 6: Copy uses banned claim 'cura'.\n- Rule 6: Breaks Brain rule \"Cosmetic, not medical: never claim to treat, cure or heal a skin condition.\" ('a cura para a pele seca').\nOther checks: 1 client active ok, 2 required fields ok, 3 turnaround ok, 4 products ok, 5 assets ok, 7 quota ok.\nDraft for the client is in #int-lumen-skin. The gate re-runs when the brief changes."
+  },
+  {
+    "task": "BR-26",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Pawfect Treats this month after this brief: statics 12/12 · videos 5/4."
+  },
+  {
+    "task": "BR-27",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Ridge Outdoor this month after this brief: statics 12/12 · videos 3/4."
+  },
+  {
+    "task": "BR-28",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Halo Sleep this month after this brief: statics 11/12 · videos 4/4."
+  },
+  {
+    "task": "BR-29",
+    "set_status": "Blocked",
+    "set_custom_fields": {
+      "Gate result": "Blocked (rule 6)",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: blocked.\n- Rule 6: Breaks Brain rule \"No superlatives we can't prove.\" ('The best-tasting subscription in the UK').\nOther checks: 1 client active ok, 2 required fields ok, 3 turnaround ok, 4 products ok, 5 assets ok, 7 quota ok.\nDraft for the client is in #int-northpeak-coffee. The gate re-runs when the brief changes."
+  },
+  {
+    "task": "BR-30",
+    "set_status": "Queued",
+    "set_custom_fields": {
+      "Gate result": "Passed",
+      "Gate checked at": "2026-10-13T09:00:00+00:00"
+    },
+    "add_comment": "Production gate: passed all 7 checks. Halo Sleep this month after this brief: statics 12/12 · videos 4/4."
+  }
+]

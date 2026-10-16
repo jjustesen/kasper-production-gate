@@ -1,0 +1,44 @@
+{
+  "channel": "#squad-b",
+  "text": "Gate: 3 of 11 briefs blocked",
+  "blocks": [
+    {
+      "type": "header",
+      "text": {
+        "type": "plain_text",
+        "text": "Production gate · Squad B · Tue 13 Oct 09:00 UTC"
+      }
+    },
+    {
+      "type": "section",
+      "fields": [
+        {
+          "type": "mrkdwn",
+          "text": "*Checked*\n11"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*Queued*\n8"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*Blocked*\n3"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Blocked (clarify with the client today)*\n• `BR-16` Pawfect Treats · needs approval: Would take Pawfect Treats over this month's plan: videos 6/4.\n• `BR-19` Halo Sleep · blocked: Copy uses banned claim 'cure'. Copy uses banned claim 'insomnia'. Copy uses banned claim 'clinically proven'. Breaks Brain rule \"Wellness, not medical: no insomnia, cure or treatment claims.\" ('Clinically proven to cure insomnia in 7 nights'). Breaks Brain rule \"'Clinically proven' only with a linked study (none exists today).\" ('Clinically proven').\n• `BR-22` Brightside Kids · blocked (internal): Brightside Kids is paused: Paused 2026-10-05 pending overdue invoice. No new production until finance un-pauses."
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*This month's quota after this run*\n• Pawfect Treats: statics 12/12 · videos 5/4 · *full*\n• Halo Sleep: statics 12/12 · videos 4/4 · *full*\n• Brightside Kids: statics 3/12 · videos 0/4"
+      }
+    }
+  ]
+}

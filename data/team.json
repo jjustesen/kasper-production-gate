@@ -1,0 +1,64 @@
+{
+ "squads": [
+  {
+   "name": "Squad A",
+   "squad_lead": "Louise",
+   "creative_lead": "Ali",
+   "members": [
+    {
+     "name": "Layla",
+     "role": "Video"
+    },
+    {
+     "name": "Lucas",
+     "role": "Video"
+    },
+    {
+     "name": "Juliana",
+     "role": "Graphics"
+    },
+    {
+     "name": "Dora",
+     "role": "Graphics"
+    },
+    {
+     "name": "Danilo",
+     "role": "Hybrid"
+    }
+   ],
+   "clients": [
+    "Northpeak Coffee",
+    "Lumen Skin",
+    "Ridge Outdoor"
+   ]
+  },
+  {
+   "name": "Squad B",
+   "squad_lead": "Bea A.",
+   "creative_lead": "Bea A.",
+   "members": [
+    {
+     "name": "Gabi",
+     "role": "Video"
+    },
+    {
+     "name": "Mello",
+     "role": "Video"
+    },
+    {
+     "name": "Ana",
+     "role": "Graphics"
+    },
+    {
+     "name": "Nathalia",
+     "role": "Graphics"
+    }
+   ],
+   "clients": [
+    "Pawfect Treats",
+    "Halo Sleep",
+    "Brightside Kids"
+   ]
+  }
+ ]
+}

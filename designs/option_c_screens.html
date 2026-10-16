@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Squad health screens</title><link rel="stylesheet" href="screens.css"></head><body>
+<header><h1>Option C · Squad and employee health (design mockups)</h1>
+<div class="sub">Not built. The numbers were computed from data/option_c_health (weeks of first Sent to Client, 14 Sep – 11 Oct, capacity adjusted for PTO, sick days and ramp-up).</div>
+<nav style="margin-top:6px"><a href="option_c_health.md">One-page design</a><a href="option_a_screens.html">Option A screens</a><a href="../out/preview.html">Option B (built) preview</a></nav></header>
+<main>
+
+<div class="label"><b>Screen 1</b> Slack DM to founders · Monday 07:00 BRT · squad totals only, no individual names</div>
+<div class="card"><div class="msg"><div class="av">SH</div><div style="flex:1;min-width:0">
+<div class="who">Squad health<span>APP · Mon 12 Oct, 07:00</span></div>
+<div>Weekly health, 4 weeks to 11 Oct. <b>Squad B needs help.</b> Squad A is stretched while one person was on PTO; watch it this week.</div>
+<div class="grid2" style="margin-top:10px" id="squads"></div>
+<div class="small muted" style="margin-top:8px">Bars: points delivered (solid) vs capacity after PTO and ramp-up (outline). Per-person detail goes only to each Squad Lead.</div>
+</div></div></div>
+
+<div class="grid2">
+<div>
+<div class="label"><b>Screen 2</b> Private DM to Louise (Squad Lead, Squad A) · her people only</div>
+<div class="card" id="louise"></div>
+</div>
+<div>
+<div class="label"><b>Screen 3</b> Private DM to Bea A. (Squad Lead, Squad B) · her people only</div>
+<div class="card" id="bea"></div>
+</div>
+</div>
+
+<div class="label"><b>Who sees what</b></div>
+<div class="card"><table>
+<tr><th>Audience</th><th>Gets</th><th>Never gets</th></tr>
+<tr><td>Founders</td><td>Squad load, backlog trend, on-time rate, "needs help" verdict, lead-role signals</td><td>Per-person numbers or flags</td></tr>
+<tr><td>Squad Lead</td><td>Their own people: load, after-hours, quality, reassignments, who to check in with and why</td><td>The other squad's people</td></tr>
+<tr><td>Designers</td><td>Nothing automatic. The check-in is a conversation, not a score.</td><td>Rankings or comparisons</td></tr>
+</table></div>
+
+</main>
+<script>
+const SQUADS = [
+  {name: "Squad A", verdict: ["warn", "Watch"], delivered: [67, 77, 62, 67], capacity: [70, 70, 53.2, 56], late: [3, 1, 3, 4], tasks: [31, 35, 26, 33],
+   queue: [6, 7, 8, 6], oldest: [1, 2, 2, 1],
+   why: "Load went 96 → 120% while one designer was on PTO (back 12 Oct), and late tasks rose to 4. The queue is stable. Rebalance, don't hire yet."},
+  {name: "Squad B", verdict: ["bad", "Needs help"], delivered: [36, 41, 43, 43], capacity: [35, 42, 42, 42], late: [0, 0, 0, 0], tasks: [14, 19, 18, 19],
+   queue: [5, 9, 13, 18], oldest: [1, 3, 4, 6],
+   why: "100% on time hides it: the team is at full capacity and the queue grew 5 → 18, oldest item 6 days. One person is Squad Lead and Creative Lead (\"Need help\", 7 Oct). Add a designer or split the lead roles."},
+];
+const WEEKS = ["14 Sep", "21 Sep", "28 Sep", "5 Oct"];
+const pct = (a, b) => b ? Math.round(100 * a / b) + "%" : "–";
+
+function bars(s) {
+  const max = 80;
+  return `<div class="bars">${WEEKS.map((w, i) => `<div><span style="height:${Math.round(60 * s.delivered[i] / max)}px;background:${s.delivered[i] > s.capacity[i] * 1.1 ? "var(--bad)" : "var(--accent)"};width:40%;display:inline-block;margin:0 1px"></span><span style="height:${Math.round(60 * s.capacity[i] / max)}px;border:1.5px solid var(--muted);width:40%;display:inline-block;margin:0 1px;border-bottom:none"></span><br>${w}</div>`).join("")}</div>`;
+}
+document.getElementById("squads").innerHTML = SQUADS.map(s => `
+  <div class="card" style="background:var(--bg)">
+    <div style="display:flex;justify-content:space-between"><b>${s.name}</b><span class="pill ${s.verdict[0]}">${s.verdict[1]}</span></div>
+    ${bars(s)}
+    <table style="margin-top:8px"><tr><th></th>${WEEKS.map(w => `<th>${w}</th>`).join("")}</tr>
+      <tr><td class="muted">Load</td>${s.delivered.map((d, i) => `<td>${pct(d, s.capacity[i])}</td>`).join("")}</tr>
+      <tr><td class="muted">On time</td>${s.tasks.map((t, i) => `<td>${pct(t - s.late[i], t)}</td>`).join("")}</tr>
+      <tr><td class="muted">Queue</td>${s.queue.map((q, i) => `<td>${q} <span class="muted small">(${s.oldest[i]}d)</span></td>`).join("")}</tr></table>
+    <div class="small" style="margin-top:6px">${s.why}</div>
+  </div>`).join("");
+
+const FLAG = {over: ["bad", "Overloaded"], hours: ["bad", "After-hours"], late: ["warn", "Slipping"], quality: ["warn", "Quality"], ok: ["ok", "OK"], ramp: ["ok", "On track"], pto: ["int", "PTO"]};
+function person(p) {
+  return `<tr><td><b>${p.name}</b><div class="small muted">${p.role}</div></td>
+    <td>${p.pts.map((x, i) => `<span title="capacity ${p.cap[i]}" style="color:${p.cap[i] && x > p.cap[i] * 1.15 ? "var(--bad)" : "inherit"}">${x}</span>`).join(" · ")}<div class="small muted">cap ${p.cap.join(" · ")}</div></td>
+    <td>${p.flags.map(f => `<span class="pill ${FLAG[f][0]}">${FLAG[f][1]}</span>`).join(" ")}<div class="small" style="margin-top:4px">${p.why}</div></td></tr>`;
+}
+function dm(lead, intro, people, checkins) {
+  return `<div class="msg"><div class="av">SH</div><div style="flex:1;min-width:0">
+    <div class="who">Squad health<span>APP · private to ${lead}</span></div><div>${intro}</div>
+    <table style="margin-top:8px"><tr><th style="width:90px">Person</th><th style="width:130px">Points / week</th><th>Flags and why</th></tr>${people.map(person).join("")}</table>
+    <div style="margin-top:10px"><b>Check in this week:</b><ul>${checkins.map(c => `<li>${c}</li>`).join("")}</ul></div>
+    <div class="btns"><span>Schedule check-in</span><span>Talking points</span><span>Mark as handled</span></div></div></div>`;
+}
+document.getElementById("louise").innerHTML = dm("Louise", "Squad A, 4 weeks to 11 Oct. 2 people to check in with.", [
+  {name: "Danilo", role: "Hybrid", pts: [15, 18, 24, 26], cap: [14, 14, 14, 14], flags: ["over", "hours", "late"],
+   why: "186% of capacity last week, rising for 4 weeks. 24 after-hours and 7 weekend actions, 7 between 00:00 and 06:00 São Paulo time (\"virando a noite de novo\", 8 Oct). 10 of 31 tasks late. Took 5 of Layla's cut-downs on 24 Sep."},
+  {name: "Juliana", role: "Graphics", pts: [14, 14, 14, 14], cap: [14, 14, 14, 14], flags: ["quality"],
+   why: "Load is fine (100%). 17 internal-error revisions and 20 QC returns on 38 tasks, e.g. old brand colours, Lumen logo. A brand checklist or pairing, not less work."},
+  {name: "Layla", role: "Video", pts: [11, 18, 13, 13], cap: [14, 14, 14, 14], flags: ["ok"],
+   why: "Peak of 18 in week 2 (\"can't take more video\", 24 Sep). You moved 5 cut-downs to Danilo, so she's back under capacity."},
+  {name: "Dora", role: "Graphics", pts: [13, 14, 11, 14], cap: [14, 14, 11.2, 14], flags: ["ok"], why: "Sick on 2 Oct, capacity adjusted."},
+  {name: "Lucas", role: "Video", pts: [14, 13, 0, 0], cap: [14, 14, 0, 0], flags: ["pto"], why: "Vacation 28 Sep – 9 Oct, back on 12 Oct. Not low output."},
+], ["<b>Danilo</b>: workload and night work. Move part of this week's queue back to Lucas.", "<b>Juliana</b>: the recurring brand errors (Ridge colours, Lumen logo)."]);
+
+document.getElementById("bea").innerHTML = dm("Bea A.", "Squad B, 4 weeks to 11 Oct. Nobody is over the line, but the queue is growing: see the founders' note.", [
+  {name: "Gabi", role: "Video", pts: [15, 15, 15, 15], cap: [14, 14, 14, 14], flags: ["ok"], why: "107%, steady. \"Render queued overnight\" is the machine, not him: 0 after-hours actions."},
+  {name: "Ana", role: "Graphics", pts: [15, 15, 14, 15], cap: [14, 14, 14, 14], flags: ["ok"], why: "~105%. Many revisions, but they are Brightside client changes (20 in 4 weeks, \"third round\"), not hers."},
+  {name: "Nathalia", role: "Graphics", pts: [0, 5, 8, 7], cap: [0, 7, 7, 7], flags: ["ramp"], why: "Started 21 Sep at 50% ramp. At or above plan, first Halo set solo on 9 Oct. Worth saying well done."},
+  {name: "Mello", role: "Video · contractor", pts: [6, 6, 6, 6], cap: [7, 7, 7, 7], flags: ["ok"], why: "86% of a 7-point contract. Lisbon time zone, no after-hours work."},
+], ["No one at risk. <b>Your own load</b> is the issue: QC and client calls back to back. Raised with the founders as a squad-level signal."]);
+</script></body></html>

@@ -1,0 +1,645 @@
+[
+ {
+  "brief": "BR-01",
+  "model": "claude-haiku-5-5",
+  "client": "Northpeak Coffee",
+  "rules": [
+   "Always show the can or bag, never a generic cup.",
+   "No superlatives we can't prove."
+  ],
+  "text": "Oat cold brew launch statics Creamy, dairy-free, zero sugar. 'Your new 3pm ritual.'",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Always show the can or bag, never a generic cup.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "No superlatives we can't prove.",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-02",
+  "model": "claude-haiku-5-5",
+  "client": "Northpeak Coffee",
+  "rules": [
+   "Always show the can or bag, never a generic cup.",
+   "No superlatives we can't prove."
+  ],
+  "text": "Hazelnut Tin autumn promo Cosy autumn flavour, limited run.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Always show the can or bag, never a generic cup.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "No superlatives we can't prove.",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-03",
+  "model": "claude-haiku-5-5",
+  "client": "Northpeak Coffee",
+  "rules": [
+   "Always show the can or bag, never a generic cup.",
+   "No superlatives we can't prove."
+  ],
+  "text": "UGC cold brew cut-downs Hook in first 2s: barista pours into a takeaway cup.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Always show the can or bag, never a generic cup.",
+    "verdict": "violates",
+    "evidence": "barista pours into a takeaway cup"
+   },
+   {
+    "rule": "No superlatives we can't prove.",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-04",
+  "model": "claude-haiku-5-5",
+  "client": "Northpeak Coffee",
+  "rules": [
+   "Always show the can or bag, never a generic cup.",
+   "No superlatives we can't prove."
+  ],
+  "text": "Payday flash sale statics First box 20% off.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Always show the can or bag, never a generic cup.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "No superlatives we can't prove.",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-05",
+  "model": "claude-haiku-5-5",
+  "client": "Northpeak Coffee",
+  "rules": [
+   "Always show the can or bag, never a generic cup.",
+   "No superlatives we can't prove."
+  ],
+  "text": "Subscription 25% off 25% off your first 3 months.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Always show the can or bag, never a generic cup.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "No superlatives we can't prove.",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-06",
+  "model": "claude-haiku-5-5",
+  "client": "Lumen Skin",
+  "rules": [
+   "Cosmetic, not medical: never claim to treat, cure or heal a skin condition.",
+   "No before/after imagery or copy (client legal, Oct 2026)."
+  ],
+  "text": "14-day glow results Before and after: real customer, 14 days of Vitamin C.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Cosmetic, not medical: never claim to treat, cure or heal a skin condition.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "No before/after imagery or copy (client legal, Oct 2026).",
+    "verdict": "violates",
+    "evidence": "Before and after: real customer, 14 days of Vitamin C"
+   }
+  ]
+ },
+ {
+  "brief": "BR-07",
+  "model": "claude-haiku-5-5",
+  "client": "Lumen Skin",
+  "rules": [
+   "Cosmetic, not medical: never claim to treat, cure or heal a skin condition.",
+   "No before/after imagery or copy (client legal, Oct 2026)."
+  ],
+  "text": "Vitamin C glow statics Glow-boosting vitamin C for dull, tired skin.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Cosmetic, not medical: never claim to treat, cure or heal a skin condition.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "No before/after imagery or copy (client legal, Oct 2026).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-08",
+  "model": "claude-haiku-5-5",
+  "client": "Lumen Skin",
+  "rules": [
+   "Cosmetic, not medical: never claim to treat, cure or heal a skin condition.",
+   "No before/after imagery or copy (client legal, Oct 2026)."
+  ],
+  "text": "SPF everyday statics Weightless SPF 50 you'll actually wear daily.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Cosmetic, not medical: never claim to treat, cure or heal a skin condition.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "No before/after imagery or copy (client legal, Oct 2026).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-09",
+  "model": "claude-haiku-5-5",
+  "client": "Lumen Skin",
+  "rules": [
+   "Cosmetic, not medical: never claim to treat, cure or heal a skin condition.",
+   "No before/after imagery or copy (client legal, Oct 2026)."
+  ],
+  "text": "Hidratante: rotina da manhã Rotina de manhã em 3 passos, foco no hidratante. Tom leve, sem promessas médicas.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Cosmetic, not medical: never claim to treat, cure or heal a skin condition.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "No before/after imagery or copy (client legal, Oct 2026).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-10",
+  "model": "claude-haiku-5-5",
+  "client": "Lumen Skin",
+  "rules": [
+   "Cosmetic, not medical: never claim to treat, cure or heal a skin condition.",
+   "No before/after imagery or copy (client legal, Oct 2026)."
+  ],
+  "text": "Starter kit gifting Gifting season angle, warm tones.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Cosmetic, not medical: never claim to treat, cure or heal a skin condition.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "No before/after imagery or copy (client legal, Oct 2026).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-11",
+  "model": "claude-haiku-5-5",
+  "client": "Ridge Outdoor",
+  "rules": [
+   "Storm Shell is water-resistant, never 'waterproof'.",
+   "Discounts capped at 30% (brand protection)."
+  ],
+  "text": "Black Friday early access Early access: 50% off the Trail Pack.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Storm Shell is water-resistant, never 'waterproof'.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "Discounts capped at 30% (brand protection).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-12",
+  "model": "claude-haiku-5-5",
+  "client": "Ridge Outdoor",
+  "rules": [
+   "Storm Shell is water-resistant, never 'waterproof'.",
+   "Discounts capped at 30% (brand protection)."
+  ],
+  "text": "Members' 30% off Members get 30% off this weekend.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Storm Shell is water-resistant, never 'waterproof'.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "Discounts capped at 30% (brand protection).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-13",
+  "model": "claude-haiku-5-5",
+  "client": "Ridge Outdoor",
+  "rules": [
+   "Storm Shell is water-resistant, never 'waterproof'.",
+   "Discounts capped at 30% (brand protection)."
+  ],
+  "text": "Tent season statics Pitch in 3 minutes, sleep anywhere.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Storm Shell is water-resistant, never 'waterproof'.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "Discounts capped at 30% (brand protection).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-14",
+  "model": "claude-haiku-5-5",
+  "client": "Ridge Outdoor",
+  "rules": [
+   "Storm Shell is water-resistant, never 'waterproof'.",
+   "Discounts capped at 30% (brand protection)."
+  ],
+  "text": "Storm Shell field test video Water-resistant shell, tested in Scottish drizzle.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Storm Shell is water-resistant, never 'waterproof'.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "Discounts capped at 30% (brand protection).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-15",
+  "model": "claude-haiku-5-5",
+  "client": "Ridge Outdoor",
+  "rules": [
+   "Storm Shell is water-resistant, never 'waterproof'.",
+   "Discounts capped at 30% (brand protection)."
+  ],
+  "text": "Bottle quick static Keeps coffee hot for 12 hours.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Storm Shell is water-resistant, never 'waterproof'.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "Discounts capped at 30% (brand protection).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-16",
+  "model": "claude-haiku-5-5",
+  "client": "Pawfect Treats",
+  "rules": [
+   "No 'vet approved' or 'vet recommended' (no vet partnership in place)."
+  ],
+  "text": "Dental chews UGC Owner POV: fresher breath in a week.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "No 'vet approved' or 'vet recommended' (no vet partnership in place).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-17",
+  "model": "claude-haiku-5-5",
+  "client": "Pawfect Treats",
+  "rules": [
+   "No 'vet approved' or 'vet recommended' (no vet partnership in place)."
+  ],
+  "text": "Dental chews statics Cleaner teeth, happier dog.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "No 'vet approved' or 'vet recommended' (no vet partnership in place).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-18",
+  "model": "claude-haiku-5-5",
+  "client": "Pawfect Treats",
+  "rules": [
+   "No 'vet approved' or 'vet recommended' (no vet partnership in place)."
+  ],
+  "text": "Treat box unboxing video Unboxing with a very excited dog.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "No 'vet approved' or 'vet recommended' (no vet partnership in place).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-19",
+  "model": "claude-haiku-5-5",
+  "client": "Halo Sleep",
+  "rules": [
+   "Wellness, not medical: no insomnia, cure or treatment claims.",
+   "'Clinically proven' only with a linked study (none exists today)."
+  ],
+  "text": "Pillow spray claims test Clinically proven to cure insomnia in 7 nights.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Wellness, not medical: no insomnia, cure or treatment claims.",
+    "verdict": "violates",
+    "evidence": "Clinically proven to cure insomnia in 7 nights"
+   },
+   {
+    "rule": "'Clinically proven' only with a linked study (none exists today).",
+    "verdict": "violates",
+    "evidence": "Clinically proven"
+   }
+  ]
+ },
+ {
+  "brief": "BR-20",
+  "model": "claude-haiku-5-5",
+  "client": "Halo Sleep",
+  "rules": [
+   "Wellness, not medical: no insomnia, cure or treatment claims.",
+   "'Clinically proven' only with a linked study (none exists today)."
+  ],
+  "text": "Curated sleep kit gifting Our curated sleep kit: the gift of a slower evening.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Wellness, not medical: no insomnia, cure or treatment claims.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "'Clinically proven' only with a linked study (none exists today).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-21",
+  "model": "claude-haiku-5-5",
+  "client": "Halo Sleep",
+  "rules": [
+   "Wellness, not medical: no insomnia, cure or treatment claims.",
+   "'Clinically proven' only with a linked study (none exists today)."
+  ],
+  "text": "Cloud pillow statics Like sleeping on a cloud, minus the weather.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Wellness, not medical: no insomnia, cure or treatment claims.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "'Clinically proven' only with a linked study (none exists today).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-23",
+  "model": "claude-haiku-5-5",
+  "client": "Halo Sleep",
+  "rules": [
+   "Wellness, not medical: no insomnia, cure or treatment claims.",
+   "'Clinically proven' only with a linked study (none exists today)."
+  ],
+  "text": "Wind-down routine video Three-step wind-down routine, soft ASMR.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Wellness, not medical: no insomnia, cure or treatment claims.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "'Clinically proven' only with a linked study (none exists today).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-24",
+  "model": "claude-haiku-5-5",
+  "client": "Northpeak Coffee",
+  "rules": [
+   "Always show the can or bag, never a generic cup.",
+   "No superlatives we can't prove."
+  ],
+  "text": "House blend beans static Roasted Monday, at your door Wednesday.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Always show the can or bag, never a generic cup.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "No superlatives we can't prove.",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-25",
+  "model": "claude-haiku-5-5",
+  "client": "Lumen Skin",
+  "rules": [
+   "Cosmetic, not medical: never claim to treat, cure or heal a skin condition.",
+   "No before/after imagery or copy (client legal, Oct 2026)."
+  ],
+  "text": "Moisturiser texture video Textura do hidratante: bomba lenta, toque satisfatório. Mensagem: a cura para a pele seca.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Cosmetic, not medical: never claim to treat, cure or heal a skin condition.",
+    "verdict": "violates",
+    "evidence": "a cura para a pele seca"
+   },
+   {
+    "rule": "No before/after imagery or copy (client legal, Oct 2026).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-26",
+  "model": "claude-haiku-5-5",
+  "client": "Pawfect Treats",
+  "rules": [
+   "No 'vet approved' or 'vet recommended' (no vet partnership in place)."
+  ],
+  "text": "Jerky statics Single-ingredient, nothing to hide.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "No 'vet approved' or 'vet recommended' (no vet partnership in place).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-27",
+  "model": "claude-haiku-5-5",
+  "client": "Ridge Outdoor",
+  "rules": [
+   "Storm Shell is water-resistant, never 'waterproof'.",
+   "Discounts capped at 30% (brand protection)."
+  ],
+  "text": "Trail pack TikTok statics Everything for a day out, nothing you don't need.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Storm Shell is water-resistant, never 'waterproof'.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "Discounts capped at 30% (brand protection).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-28",
+  "model": "claude-haiku-5-5",
+  "client": "Halo Sleep",
+  "rules": [
+   "Wellness, not medical: no insomnia, cure or treatment claims.",
+   "'Clinically proven' only with a linked study (none exists today)."
+  ],
+  "text": "Silk mask video Total darkness, zero pressure on your eyes.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Wellness, not medical: no insomnia, cure or treatment claims.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "'Clinically proven' only with a linked study (none exists today).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ },
+ {
+  "brief": "BR-29",
+  "model": "claude-haiku-5-5",
+  "client": "Northpeak Coffee",
+  "rules": [
+   "Always show the can or bag, never a generic cup.",
+   "No superlatives we can't prove."
+  ],
+  "text": "Subscription perks statics The best-tasting subscription in the UK. Skip, pause or swap anytime.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Always show the can or bag, never a generic cup.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "No superlatives we can't prove.",
+    "verdict": "violates",
+    "evidence": "The best-tasting subscription in the UK"
+   }
+  ]
+ },
+ {
+  "brief": "BR-30",
+  "model": "claude-haiku-5-5",
+  "client": "Halo Sleep",
+  "rules": [
+   "Wellness, not medical: no insomnia, cure or treatment claims.",
+   "'Clinically proven' only with a linked study (none exists today)."
+  ],
+  "text": "Eye mask static Block the light, keep the calm.",
+  "source": "hand-labelled seed",
+  "verdicts": [
+   {
+    "rule": "Wellness, not medical: no insomnia, cure or treatment claims.",
+    "verdict": "ok",
+    "evidence": ""
+   },
+   {
+    "rule": "'Clinically proven' only with a linked study (none exists today).",
+    "verdict": "ok",
+    "evidence": ""
+   }
+  ]
+ }
+]

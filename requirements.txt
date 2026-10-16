@@ -1,0 +1,3 @@
+pytest>=8
+# Only needed for --live Brain-rule calls:
+anthropic

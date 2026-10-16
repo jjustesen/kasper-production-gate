@@ -1,0 +1,5 @@
+[
+  {"id":"m1","at":"2026-10-12T18:05:00Z","from":"sasha@heykasper.com","to":["priya@haldenoutdoor.example"],"cc":["freya@haldenoutdoor.example"],"subject":"Welcome to Kāsper","body":"Hi Priya, welcome aboard..."},
+  {"id":"m2","at":"2026-10-12T18:05:30Z","from":"mailer-daemon@haldenoutdoor.example","to":["sasha@heykasper.com"],"subject":"Undeliverable: Welcome to Kāsper","body":"550 5.1.1 The email account that you tried to reach does not exist: priya@haldenoutdoor.example"},
+  {"id":"m3","at":"2026-10-13T08:12:00Z","from":"freya@haldenoutdoor.example","to":["ali@heykasper.com"],"subject":"2026 brand book + logos","body":"Hi Ali, new logos are here: https://drive.google.com/drive/folders/halden-brand-2026. The brand book PDF is still with our designer, should be Thursday. Freya"}
+]

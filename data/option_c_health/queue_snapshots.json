@@ -1,0 +1,50 @@
+[
+ {
+  "week_starting": "2026-09-14",
+  "squad": "Squad A",
+  "queued_unassigned": 6,
+  "oldest_queued_days": 1
+ },
+ {
+  "week_starting": "2026-09-21",
+  "squad": "Squad A",
+  "queued_unassigned": 7,
+  "oldest_queued_days": 2
+ },
+ {
+  "week_starting": "2026-09-28",
+  "squad": "Squad A",
+  "queued_unassigned": 8,
+  "oldest_queued_days": 2
+ },
+ {
+  "week_starting": "2026-10-05",
+  "squad": "Squad A",
+  "queued_unassigned": 6,
+  "oldest_queued_days": 1
+ },
+ {
+  "week_starting": "2026-09-14",
+  "squad": "Squad B",
+  "queued_unassigned": 5,
+  "oldest_queued_days": 1
+ },
+ {
+  "week_starting": "2026-09-21",
+  "squad": "Squad B",
+  "queued_unassigned": 9,
+  "oldest_queued_days": 3
+ },
+ {
+  "week_starting": "2026-09-28",
+  "squad": "Squad B",
+  "queued_unassigned": 13,
+  "oldest_queued_days": 4
+ },
+ {
+  "week_starting": "2026-10-05",
+  "squad": "Squad B",
+  "queued_unassigned": 18,
+  "oldest_queued_days": 6
+ }
+]

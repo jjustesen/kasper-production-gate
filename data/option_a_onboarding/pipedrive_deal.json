@@ -1,0 +1,30 @@
+{
+  "deal_id": 4471,
+  "title": "Halden Outdoor: Growth plan",
+  "status": "won",
+  "won_at": "2026-10-12T11:30:00Z",
+  "owner": "Sasha",
+  "organization": {
+    "name": "Halden Outdoor Ltd",
+    "website": "https://haldenoutdoor.example",
+    "country": "United Kingdom",
+    "address": "Unit 4, Keswick Works, Cumbria, UK"
+  },
+  "plan": {
+    "name": "Growth",
+    "statics_per_month": 12,
+    "videos_per_month": 4,
+    "ugc_included": true,
+    "monthly_fee_gbp": 6500,
+    "start_date": "2026-10-19",
+    "minimum_term_months": 3
+  },
+  "squad_assigned": "Squad A",
+  "contacts": [
+    {"name": "Freya Lindqvist", "role": "Head of Growth", "email": "freya@haldenoutdoor.example", "primary": true},
+    {"name": "Tom Ashby", "role": "Founder & CEO", "email": "tom@haldenoutdoor.example", "primary": false},
+    {"name": "Priya Nair", "role": "Brand Manager", "email": "priya@haldenoutdoor.example", "primary": false, "note": "Listed as creative approver on the proposal"},
+    {"name": "Accounts Payable", "role": "Billing", "email": "ap@haldenoutdoor.example", "phone": "+44 7700 900417", "primary": false}
+  ],
+  "notes": "Came from referral (Ridge Outdoor founder). Wants to be live before Black Friday. Sensitive about being compared with Ridge."
+}

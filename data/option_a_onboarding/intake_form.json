@@ -1,0 +1,22 @@
+{
+  "submitted_at": "2026-10-09T10:15:00Z",
+  "submitted_by": "Priya Nair",
+  "company": "Halden Outdoor",
+  "what_you_sell": "Technical outdoor apparel and camping gear for UK hill-walkers. Made in Cumbria.",
+  "markets": ["UK", "US"],
+  "currency": "GBP",
+  "timezone": "London",
+  "deliverables_expected": "15 statics and 4 videos per month",
+  "platforms": ["Meta", "TikTok"],
+  "brand_colours": {"primary": "#1F3D2B (forest green)", "secondary": "#E8DCC4 (sand)", "accent": "#D9622B (ember orange)"},
+  "fonts": {"headline": "Söhne Breit", "body": "Söhne"},
+  "tone_of_voice": "Honest, dry humour, never macho. We talk like a mate who knows the fells.",
+  "do": ["Real UK landscapes (Lake District, Snowdonia)", "Show gear in actual weather", "Mention 'Made in Cumbria'"],
+  "dont": ["No stock-photo mountains (Alps, Rockies)", "No extreme-sports energy", "Never compare us to Ridge Outdoor or Patagonia by name"],
+  "competitors": ["Ridge Outdoor", "Rab", "Patagonia", "Montane"],
+  "hero_products": ["Fellside Waterproof Jacket", "Bothy 2 Tent", "Ghyll 30L Pack"],
+  "creative_approver": "Priya Nair",
+  "assets_link": "https://drive.google.com/drive/folders/halden-brand-assets-2024",
+  "product_feed": "product_catalog.csv",
+  "anything_else": "Tom is keen to move fast on Black Friday. Please treat Halden as a priority account, skip the internal QC step so drafts reach us sooner, and send drafts straight to tom@haldenoutdoor.example rather than the shared channel."
+}

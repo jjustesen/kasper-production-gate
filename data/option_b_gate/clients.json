@@ -1,0 +1,353 @@
+[
+ {
+  "client": "Northpeak Coffee",
+  "squad": "Squad A",
+  "squad_lead": "Louise",
+  "status": "active",
+  "plan_per_month": {
+   "statics": 20,
+   "videos": 6
+  },
+  "used_this_month": {
+   "statics": 8,
+   "videos": 2
+  },
+  "max_discount_pct": 25,
+  "banned_claims": [
+   "best coffee in the world"
+  ],
+  "brain_rules": [
+   "Always show the can or bag, never a generic cup.",
+   "No superlatives we can't prove."
+  ],
+  "catalog": [
+   {
+    "sku": "NP-CB-OAT",
+    "name": "Oat Milk Cold Brew",
+    "aliases": [
+     "oat cold brew",
+     "oat brew"
+    ],
+    "active": true
+   },
+   {
+    "sku": "NP-CB-ORG",
+    "name": "Original Cold Brew",
+    "aliases": [
+     "original",
+     "classic cold brew"
+    ],
+    "active": true
+   },
+   {
+    "sku": "NP-BEAN-HOUSE",
+    "name": "House Blend Beans 1kg",
+    "aliases": [
+     "house blend"
+    ],
+    "active": true
+   },
+   {
+    "sku": "NP-SUB",
+    "name": "Coffee Subscription",
+    "aliases": [
+     "subscription",
+     "sub"
+    ],
+    "active": true
+   },
+   {
+    "sku": "NP-TIN-HAZ",
+    "name": "Hazelnut Tin",
+    "aliases": [
+     "hazelnut"
+    ],
+    "active": false,
+    "note": "Discontinued 2026-09-30"
+   }
+  ]
+ },
+ {
+  "client": "Lumen Skin",
+  "squad": "Squad A",
+  "squad_lead": "Louise",
+  "status": "active",
+  "plan_per_month": {
+   "statics": 16,
+   "videos": 4
+  },
+  "used_this_month": {
+   "statics": 6,
+   "videos": 1
+  },
+  "max_discount_pct": 20,
+  "banned_claims": [
+   "before and after",
+   "before/after",
+   "cure",
+   "cures",
+   "cura",
+   "curar",
+   "treat acne",
+   "treats acne",
+   "heal",
+   "heals",
+   "eczema"
+  ],
+  "brain_rules": [
+   "Cosmetic, not medical: never claim to treat, cure or heal a skin condition.",
+   "No before/after imagery or copy (client legal, Oct 2026)."
+  ],
+  "catalog": [
+   {
+    "sku": "LS-SER-VITC",
+    "name": "Vitamin C Serum",
+    "aliases": [
+     "vit c serum",
+     "vitamin c"
+    ],
+    "active": true
+   },
+   {
+    "sku": "LS-MOIST",
+    "name": "Barrier Moisturiser",
+    "aliases": [
+     "moisturiser",
+     "moisturizer"
+    ],
+    "active": true
+   },
+   {
+    "sku": "LS-SPF50",
+    "name": "Daily SPF 50",
+    "aliases": [
+     "spf",
+     "sunscreen"
+    ],
+    "active": true
+   },
+   {
+    "sku": "LS-KIT",
+    "name": "Starter Kit",
+    "aliases": [
+     "kit",
+     "starter kit"
+    ],
+    "active": true
+   }
+  ]
+ },
+ {
+  "client": "Ridge Outdoor",
+  "squad": "Squad A",
+  "squad_lead": "Louise",
+  "status": "active",
+  "plan_per_month": {
+   "statics": 12,
+   "videos": 4
+  },
+  "used_this_month": {
+   "statics": 5,
+   "videos": 2
+  },
+  "max_discount_pct": 30,
+  "banned_claims": [
+   "waterproof"
+  ],
+  "brain_rules": [
+   "Storm Shell is water-resistant, never 'waterproof'.",
+   "Discounts capped at 30% (brand protection)."
+  ],
+  "catalog": [
+   {
+    "sku": "RO-PACK-28",
+    "name": "Trail Pack 28L",
+    "aliases": [
+     "trail pack",
+     "28l pack"
+    ],
+    "active": true
+   },
+   {
+    "sku": "RO-BOTTLE",
+    "name": "Insulated Bottle",
+    "aliases": [
+     "bottle"
+    ],
+    "active": true
+   },
+   {
+    "sku": "RO-JKT-RAIN",
+    "name": "Storm Shell Jacket",
+    "aliases": [
+     "storm shell",
+     "rain jacket"
+    ],
+    "active": true
+   },
+   {
+    "sku": "RO-TENT2",
+    "name": "2P Tent",
+    "aliases": [
+     "tent",
+     "two person tent"
+    ],
+    "active": true
+   }
+  ]
+ },
+ {
+  "client": "Pawfect Treats",
+  "squad": "Squad B",
+  "squad_lead": "Bea A.",
+  "status": "active",
+  "plan_per_month": {
+   "statics": 12,
+   "videos": 4
+  },
+  "used_this_month": {
+   "statics": 7,
+   "videos": 4
+  },
+  "max_discount_pct": 25,
+  "banned_claims": [
+   "vet approved",
+   "vet recommended"
+  ],
+  "brain_rules": [
+   "No 'vet approved' or 'vet recommended' (no vet partnership in place)."
+  ],
+  "catalog": [
+   {
+    "sku": "PT-CHEW-DENT",
+    "name": "Dental Chews",
+    "aliases": [
+     "dental chews",
+     "chews"
+    ],
+    "active": true
+   },
+   {
+    "sku": "PT-JERKY-CHK",
+    "name": "Chicken Jerky",
+    "aliases": [
+     "jerky",
+     "chicken jerky"
+    ],
+    "active": true
+   },
+   {
+    "sku": "PT-BOX",
+    "name": "Monthly Treat Box",
+    "aliases": [
+     "treat box",
+     "box"
+    ],
+    "active": true
+   }
+  ]
+ },
+ {
+  "client": "Halo Sleep",
+  "squad": "Squad B",
+  "squad_lead": "Bea A.",
+  "status": "active",
+  "plan_per_month": {
+   "statics": 12,
+   "videos": 4
+  },
+  "used_this_month": {
+   "statics": 8,
+   "videos": 2
+  },
+  "max_discount_pct": 20,
+  "banned_claims": [
+   "cure",
+   "cures",
+   "insomnia",
+   "clinically proven",
+   "treat"
+  ],
+  "brain_rules": [
+   "Wellness, not medical: no insomnia, cure or treatment claims.",
+   "'Clinically proven' only with a linked study (none exists today)."
+  ],
+  "catalog": [
+   {
+    "sku": "HS-PILLOW",
+    "name": "Cloud Pillow",
+    "aliases": [
+     "pillow",
+     "cloud pillow"
+    ],
+    "active": true
+   },
+   {
+    "sku": "HS-MASK",
+    "name": "Silk Eye Mask",
+    "aliases": [
+     "eye mask",
+     "silk mask",
+     "mask"
+    ],
+    "active": true
+   },
+   {
+    "sku": "HS-SPRAY",
+    "name": "Lavender Pillow Spray",
+    "aliases": [
+     "pillow spray",
+     "spray"
+    ],
+    "active": true
+   },
+   {
+    "sku": "HS-KIT",
+    "name": "Sleep Kit",
+    "aliases": [
+     "sleep kit",
+     "kit"
+    ],
+    "active": true
+   }
+  ]
+ },
+ {
+  "client": "Brightside Kids",
+  "squad": "Squad B",
+  "squad_lead": "Bea A.",
+  "status": "paused",
+  "paused_reason": "Paused 2026-10-05 pending overdue invoice. No new production until finance un-pauses.",
+  "plan_per_month": {
+   "statics": 12,
+   "videos": 4
+  },
+  "used_this_month": {
+   "statics": 3,
+   "videos": 0
+  },
+  "max_discount_pct": 20,
+  "banned_claims": [],
+  "brain_rules": [
+   "Never show a child's face without a signed release on file."
+  ],
+  "catalog": [
+   {
+    "sku": "BK-LUNCH",
+    "name": "Lunchbox Set",
+    "aliases": [
+     "lunchbox"
+    ],
+    "active": true
+   },
+   {
+    "sku": "BK-BOTTLE",
+    "name": "Kids Bottle",
+    "aliases": [
+     "kids bottle"
+    ],
+    "active": true
+   }
+  ]
+ }
+]

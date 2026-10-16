@@ -1,0 +1,808 @@
+[
+ {
+  "id": "BR-01",
+  "client": "Northpeak Coffee",
+  "title": "Oat cold brew launch statics",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T08:00:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "1:1",
+   "4:5"
+  ],
+  "deliverables": {
+   "statics": 4,
+   "videos": 0
+  },
+  "due_date": "2026-10-20",
+  "products": [
+   "oat cold brew"
+  ],
+  "copy_direction": "Creamy, dairy-free, zero sugar. 'Your new 3pm ritual.'",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-02",
+  "client": "Northpeak Coffee",
+  "title": "Hazelnut Tin autumn promo",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T08:23:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "4:5"
+  ],
+  "deliverables": {
+   "statics": 3,
+   "videos": 0
+  },
+  "due_date": "2026-10-21",
+  "products": [
+   "Hazelnut Tin"
+  ],
+  "copy_direction": "Cosy autumn flavour, limited run.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-03",
+  "client": "Northpeak Coffee",
+  "title": "UGC cold brew cut-downs",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T08:46:00Z",
+  "platforms": [
+   "TikTok",
+   "Meta"
+  ],
+  "formats": [
+   "9:16 15s"
+  ],
+  "deliverables": {
+   "statics": 0,
+   "videos": 2
+  },
+  "due_date": "2026-10-22",
+  "products": [
+   "NP-CB-ORG"
+  ],
+  "copy_direction": "Hook in first 2s: barista pours into a takeaway cup.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-04",
+  "client": "Northpeak Coffee",
+  "title": "Payday flash sale statics",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T09:09:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "1:1"
+  ],
+  "deliverables": {
+   "statics": 3,
+   "videos": 0
+  },
+  "due_date": "2026-10-15",
+  "products": [
+   "subscription"
+  ],
+  "copy_direction": "First box 20% off.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": [
+   {
+    "by": "Louise",
+    "at": "2026-10-12T16:10:00Z",
+    "text": "Rush approved — Louise. Client has payday on the 16th."
+   }
+  ]
+ },
+ {
+  "id": "BR-05",
+  "client": "Northpeak Coffee",
+  "title": "Subscription 25% off",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T09:32:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "4:5",
+   "9:16"
+  ],
+  "deliverables": {
+   "statics": 2,
+   "videos": 0
+  },
+  "due_date": "2026-10-23",
+  "products": [
+   "NP-SUB"
+  ],
+  "copy_direction": "25% off your first 3 months.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-06",
+  "client": "Lumen Skin",
+  "title": "14-day glow results",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T09:55:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "4:5"
+  ],
+  "deliverables": {
+   "statics": 3,
+   "videos": 0
+  },
+  "due_date": "2026-10-22",
+  "products": [
+   "LS-SER-VITC"
+  ],
+  "copy_direction": "Before and after: real customer, 14 days of Vitamin C.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-07",
+  "client": "Lumen Skin",
+  "title": "Vitamin C glow statics",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T10:18:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "1:1",
+   "4:5"
+  ],
+  "deliverables": {
+   "statics": 2,
+   "videos": 0
+  },
+  "due_date": "2026-10-21",
+  "products": [
+   "vitamin c"
+  ],
+  "copy_direction": "Glow-boosting vitamin C for dull, tired skin.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-08",
+  "client": "Lumen Skin",
+  "title": "SPF everyday statics",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T10:41:00Z",
+  "platforms": [
+   "Meta",
+   "Pinterest"
+  ],
+  "formats": [
+   "2:3",
+   "1:1"
+  ],
+  "deliverables": {
+   "statics": 2,
+   "videos": 0
+  },
+  "due_date": "2026-10-20",
+  "products": [
+   "LS-SPF50"
+  ],
+  "copy_direction": "Weightless SPF 50 you'll actually wear daily.",
+  "assets_link": "",
+  "use_studio_catalog": true,
+  "notes": "No new shoot. Use the packshots already in the Studio catalog.",
+  "comments": []
+ },
+ {
+  "id": "BR-09",
+  "client": "Lumen Skin",
+  "title": "Hidratante: rotina da manhã",
+  "requested_by": "Ali (internal, from client call)",
+  "created_at": "2026-10-12T11:04:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "4:5"
+  ],
+  "deliverables": {
+   "statics": 2,
+   "videos": 0
+  },
+  "due_date": "2026-10-21",
+  "products": [
+   "moisturiser"
+  ],
+  "copy_direction": "Rotina de manhã em 3 passos, foco no hidratante. Tom leve, sem promessas médicas.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "Brief escrito em português pela Creative Lead após a call. Cópia final em inglês.",
+  "comments": []
+ },
+ {
+  "id": "BR-10",
+  "client": "Lumen Skin",
+  "title": "Starter kit gifting",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T11:27:00Z",
+  "platforms": [],
+  "formats": [],
+  "deliverables": {
+   "statics": 3,
+   "videos": 0
+  },
+  "due_date": "2026-10-27",
+  "products": [
+   "LS-KIT"
+  ],
+  "copy_direction": "Gifting season angle, warm tones.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "Formats TBC",
+  "comments": []
+ },
+ {
+  "id": "BR-11",
+  "client": "Ridge Outdoor",
+  "title": "Black Friday early access",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T11:50:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "1:1",
+   "4:5"
+  ],
+  "deliverables": {
+   "statics": 2,
+   "videos": 0
+  },
+  "due_date": "2026-10-26",
+  "products": [
+   "RO-PACK-28"
+  ],
+  "copy_direction": "Early access: 50% off the Trail Pack.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-12",
+  "client": "Ridge Outdoor",
+  "title": "Members' 30% off",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T12:13:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "4:5"
+  ],
+  "deliverables": {
+   "statics": 2,
+   "videos": 0
+  },
+  "due_date": "2026-10-26",
+  "products": [
+   "trail pack"
+  ],
+  "copy_direction": "Members get 30% off this weekend.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-13",
+  "client": "Ridge Outdoor",
+  "title": "Tent season statics",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T12:36:00Z",
+  "platforms": [
+   "TikTok"
+  ],
+  "formats": [
+   "9:16"
+  ],
+  "deliverables": {
+   "statics": 3,
+   "videos": 0
+  },
+  "due_date": "2026-10-23",
+  "products": [
+   "tent"
+  ],
+  "copy_direction": "Pitch in 3 minutes, sleep anywhere.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-14",
+  "client": "Ridge Outdoor",
+  "title": "Storm Shell field test video",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T12:59:00Z",
+  "platforms": [
+   "Meta",
+   "TikTok"
+  ],
+  "formats": [
+   "9:16 30s"
+  ],
+  "deliverables": {
+   "statics": 0,
+   "videos": 1
+  },
+  "due_date": "2026-10-28",
+  "products": [
+   "storm shell"
+  ],
+  "copy_direction": "Water-resistant shell, tested in Scottish drizzle.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-15",
+  "client": "Ridge Outdoor",
+  "title": "Bottle quick static",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T13:22:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "1:1"
+  ],
+  "deliverables": {
+   "statics": 1,
+   "videos": 0
+  },
+  "due_date": "2026-10-14",
+  "products": [
+   "RO-BOTTLE"
+  ],
+  "copy_direction": "Keeps coffee hot for 12 hours.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": [
+   {
+    "by": "Juliana",
+    "at": "2026-10-12T19:40:00Z",
+    "text": "rush ok, I can squeeze it in tomorrow"
+   }
+  ]
+ },
+ {
+  "id": "BR-16",
+  "client": "Pawfect Treats",
+  "title": "Dental chews UGC",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T13:45:00Z",
+  "platforms": [
+   "TikTok"
+  ],
+  "formats": [
+   "9:16 30s"
+  ],
+  "deliverables": {
+   "statics": 0,
+   "videos": 2
+  },
+  "due_date": "2026-10-28",
+  "products": [
+   "dental chews"
+  ],
+  "copy_direction": "Owner POV: fresher breath in a week.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-17",
+  "client": "Pawfect Treats",
+  "title": "Dental chews statics",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T14:08:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "1:1",
+   "4:5"
+  ],
+  "deliverables": {
+   "statics": 3,
+   "videos": 0
+  },
+  "due_date": "2026-10-21",
+  "products": [
+   "PT-CHEW-DENT"
+  ],
+  "copy_direction": "Cleaner teeth, happier dog.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-18",
+  "client": "Pawfect Treats",
+  "title": "Treat box unboxing video",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T14:31:00Z",
+  "platforms": [
+   "TikTok",
+   "Meta"
+  ],
+  "formats": [
+   "9:16 15s"
+  ],
+  "deliverables": {
+   "statics": 0,
+   "videos": 1
+  },
+  "due_date": "2026-10-27",
+  "products": [
+   "PT-BOX"
+  ],
+  "copy_direction": "Unboxing with a very excited dog.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": [
+   {
+    "by": "Bea A.",
+    "at": "2026-10-12T15:05:00Z",
+    "text": "Overage approved by Bea A.: client signed the extra-video add-on (1 video, Oct)."
+   }
+  ]
+ },
+ {
+  "id": "BR-19",
+  "client": "Halo Sleep",
+  "title": "Pillow spray claims test",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T14:54:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "4:5"
+  ],
+  "deliverables": {
+   "statics": 2,
+   "videos": 0
+  },
+  "due_date": "2026-10-22",
+  "products": [
+   "HS-SPRAY"
+  ],
+  "copy_direction": "Clinically proven to cure insomnia in 7 nights.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-20",
+  "client": "Halo Sleep",
+  "title": "Curated sleep kit gifting",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T15:17:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "1:1"
+  ],
+  "deliverables": {
+   "statics": 1,
+   "videos": 0
+  },
+  "due_date": "2026-10-21",
+  "products": [
+   "sleep kit"
+  ],
+  "copy_direction": "Our curated sleep kit: the gift of a slower evening.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-21",
+  "client": "Halo Sleep",
+  "title": "Cloud pillow statics",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T15:40:00Z",
+  "platforms": [
+   "Meta",
+   "Pinterest"
+  ],
+  "formats": [
+   "4:5",
+   "2:3"
+  ],
+  "deliverables": {
+   "statics": 2,
+   "videos": 0
+  },
+  "due_date": "2026-10-22",
+  "products": [
+   "HS-PILLOW"
+  ],
+  "copy_direction": "Like sleeping on a cloud, minus the weather.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-22",
+  "client": "Brightside Kids",
+  "title": "Back-to-school lunchbox",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T16:03:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "4:5"
+  ],
+  "deliverables": {
+   "statics": 2,
+   "videos": 0
+  },
+  "due_date": "2026-10-23",
+  "products": [
+   "BK-LUNCH"
+  ],
+  "copy_direction": "Lunchboxes that survive the playground.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-23",
+  "client": "Halo Sleep",
+  "title": "Wind-down routine video",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T16:26:00Z",
+  "platforms": [
+   "TikTok"
+  ],
+  "formats": [
+   "9:16 30s"
+  ],
+  "deliverables": {
+   "statics": 0,
+   "videos": 1
+  },
+  "due_date": "2026-10-20",
+  "products": [
+   "pillow spray"
+  ],
+  "copy_direction": "Three-step wind-down routine, soft ASMR.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-24",
+  "client": "Northpeak Coffee",
+  "title": "House blend beans static",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T16:49:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "1:1"
+  ],
+  "deliverables": {
+   "statics": 1,
+   "videos": 0
+  },
+  "due_date": "2026-10-19",
+  "products": [
+   "house blend"
+  ],
+  "copy_direction": "Roasted Monday, at your door Wednesday.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-25",
+  "client": "Lumen Skin",
+  "title": "Moisturiser texture video",
+  "requested_by": "Ali (internal, from client call)",
+  "created_at": "2026-10-12T17:12:00Z",
+  "platforms": [
+   "TikTok"
+  ],
+  "formats": [
+   "9:16 15s"
+  ],
+  "deliverables": {
+   "statics": 0,
+   "videos": 1
+  },
+  "due_date": "2026-10-26",
+  "products": [
+   "LS-MOIST"
+  ],
+  "copy_direction": "Textura do hidratante: bomba lenta, toque satisfatório. Mensagem: a cura para a pele seca.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-26",
+  "client": "Pawfect Treats",
+  "title": "Jerky statics",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T17:35:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "4:5"
+  ],
+  "deliverables": {
+   "statics": 2,
+   "videos": 0
+  },
+  "due_date": "2026-10-22",
+  "products": [
+   "the chicken jerky"
+  ],
+  "copy_direction": "Single-ingredient, nothing to hide.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-27",
+  "client": "Ridge Outdoor",
+  "title": "Trail pack TikTok statics",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T17:58:00Z",
+  "platforms": [
+   "TikTok"
+  ],
+  "formats": [
+   "9:16"
+  ],
+  "deliverables": {
+   "statics": 2,
+   "videos": 0
+  },
+  "due_date": "2026-10-22",
+  "products": [
+   "trail pack"
+  ],
+  "copy_direction": "Everything for a day out, nothing you don't need.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-28",
+  "client": "Halo Sleep",
+  "title": "Silk mask video",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T18:21:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "4:5 15s"
+  ],
+  "deliverables": {
+   "statics": 0,
+   "videos": 1
+  },
+  "due_date": "2026-10-27",
+  "products": [
+   "silk mask"
+  ],
+  "copy_direction": "Total darkness, zero pressure on your eyes.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-29",
+  "client": "Northpeak Coffee",
+  "title": "Subscription perks statics",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T18:44:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "4:5"
+  ],
+  "deliverables": {
+   "statics": 2,
+   "videos": 0
+  },
+  "due_date": "2026-10-22",
+  "products": [
+   "NP-SUB"
+  ],
+  "copy_direction": "The best-tasting subscription in the UK. Skip, pause or swap anytime.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ },
+ {
+  "id": "BR-30",
+  "client": "Halo Sleep",
+  "title": "Eye mask static",
+  "requested_by": "Client (Slack)",
+  "created_at": "2026-10-12T19:07:00Z",
+  "platforms": [
+   "Meta"
+  ],
+  "formats": [
+   "1:1"
+  ],
+  "deliverables": {
+   "statics": 1,
+   "videos": 0
+  },
+  "due_date": "2026-10-21",
+  "products": [
+   "eye mask"
+  ],
+  "copy_direction": "Block the light, keep the calm.",
+  "assets_link": "https://drive.google.com/drive/folders/client-assets",
+  "use_studio_catalog": false,
+  "notes": "",
+  "comments": []
+ }
+]

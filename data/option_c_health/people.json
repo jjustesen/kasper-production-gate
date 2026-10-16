@@ -1,0 +1,100 @@
+[
+ {
+  "name": "Louise",
+  "squad": "Squad A",
+  "role": "Squad Lead",
+  "timezone": "America/Sao_Paulo",
+  "start_date": "2024-03-04",
+  "weekly_capacity_points": null
+ },
+ {
+  "name": "Ali",
+  "squad": "Squad A",
+  "role": "Creative Lead",
+  "timezone": "America/New_York",
+  "start_date": "2023-11-13",
+  "weekly_capacity_points": null
+ },
+ {
+  "name": "Layla",
+  "squad": "Squad A",
+  "role": "Video",
+  "timezone": "America/Sao_Paulo",
+  "start_date": "2024-06-03",
+  "weekly_capacity_points": 14
+ },
+ {
+  "name": "Lucas",
+  "squad": "Squad A",
+  "role": "Video",
+  "timezone": "America/Sao_Paulo",
+  "start_date": "2025-01-13",
+  "weekly_capacity_points": 14
+ },
+ {
+  "name": "Juliana",
+  "squad": "Squad A",
+  "role": "Graphics",
+  "timezone": "America/Sao_Paulo",
+  "start_date": "2025-04-07",
+  "weekly_capacity_points": 14
+ },
+ {
+  "name": "Dora",
+  "squad": "Squad A",
+  "role": "Graphics",
+  "timezone": "America/Sao_Paulo",
+  "start_date": "2024-09-02",
+  "weekly_capacity_points": 14
+ },
+ {
+  "name": "Danilo",
+  "squad": "Squad A",
+  "role": "Hybrid",
+  "timezone": "America/Sao_Paulo",
+  "start_date": "2024-02-12",
+  "weekly_capacity_points": 14
+ },
+ {
+  "name": "Bea A.",
+  "squad": "Squad B",
+  "role": "Squad Lead + Creative Lead",
+  "timezone": "America/Sao_Paulo",
+  "start_date": "2023-08-21",
+  "weekly_capacity_points": null
+ },
+ {
+  "name": "Gabi",
+  "squad": "Squad B",
+  "role": "Video",
+  "timezone": "America/Sao_Paulo",
+  "start_date": "2024-05-06",
+  "weekly_capacity_points": 14
+ },
+ {
+  "name": "Mello",
+  "squad": "Squad B",
+  "role": "Video",
+  "timezone": "Europe/Lisbon",
+  "start_date": "2025-06-02",
+  "weekly_capacity_points": 7,
+  "employment_type": "contractor"
+ },
+ {
+  "name": "Ana",
+  "squad": "Squad B",
+  "role": "Graphics",
+  "timezone": "America/Sao_Paulo",
+  "start_date": "2024-10-14",
+  "weekly_capacity_points": 14
+ },
+ {
+  "name": "Nathalia",
+  "squad": "Squad B",
+  "role": "Graphics",
+  "timezone": "America/Sao_Paulo",
+  "start_date": "2026-09-21",
+  "weekly_capacity_points": 14,
+  "ramp_plan": "50% of capacity for the first 4 weeks"
+ }
+]
