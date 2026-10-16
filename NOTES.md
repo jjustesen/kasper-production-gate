@@ -16,7 +16,9 @@
 | BR-25 | "a cura para a pele seca" ("cura" is banned, in Portuguese) | client |
 | BR-29 | "the best-tasting subscription in the UK" is an unproven superlative | client |
 
-To see it: `python -m gate`, then open `out/preview.html`. It shows each squad's digest, every brief's ClickUp task, the `#int` alert and the client draft, all built from the run output. Tests: `python -m pytest -q` (81 tests).
+To see it: `npm install && npm run gate`, then open `out/preview.html`. It shows each squad's digest, every brief's ClickUp task, the `#int` alert and the client draft, all built from the run output. Tests: `npm test` (82 tests).
+
+The gate is written in TypeScript, the same language as the Studio and the internal apps, so the team and its coding agents can maintain it. It runs on Node with no build step.
 
 These look wrong but pass:
 - **BR-04 and BR-18:** the Squad Lead approved them (rush and overage).
@@ -100,7 +102,7 @@ The bot versions are also less reliable: dates and quota would be "reasoned" by 
 **Cheaper alternative I looked at:**
 - **TypeSafe's Jev** is a typed-decision model with yes/no outputs and probabilities, at about $0.04 per million input tokens. It would bring the model cost to about $0.01/month.
 - I didn't use it because access is waitlisted and its accuracy claims come from the vendor. The saving is about $0.50/month.
-- It plugs in by replacing `BrainChecker._ask_model`. I'd switch only if it gets every case in `expected/gate_expected.json` right (`scripts/compare_to_key.py` does that comparison).
+- It plugs in by replacing `BrainChecker.askModel` in `src/brain.ts`. I'd switch only if it gets every case in `expected/gate_expected.json` right (`npm run compare` does that comparison).
 
 ## 4. Where it should live
 
@@ -141,13 +143,13 @@ Team-lead bot template → reads the "Gate result" field for the morning briefin
 11. **Assets:** `use_studio_catalog: true` satisfies the assets rule. I don't check that the Studio actually has shots for that SKU.
 12. **Paused client:** this is an internal block. Finance owns that conversation, so no message is drafted for the client and no model is called.
 13. **What the model judges:** the model skips numeric Brain rules ("discounts capped at 30%"), because code checks those. When a Brain-rule hit quotes the same words as a banned phrase, the client is asked about it once.
-14. **Where the cached answers came from:** there are no API credentials in my environment, so `cache/brain_cache.json` holds **hand-labelled** answers for the 29 Brain checks (marked `"source": "hand-labelled seed"`). The live path is tested with a mocked API: request shape, parsing, caching and failure handling. To check the real model: `python -m gate --live --cache cache/live_run.json --out out/live`, then `python scripts/compare_to_key.py out/live/results.json`.
+14. **Where the cached answers came from:** there are no API credentials in my environment, so `cache/brain_cache.json` holds **hand-labelled** answers for the 29 Brain checks (marked `"source": "hand-labelled seed"`). The live path is tested with a mocked API: request shape, parsing, caching and failure handling. To check the real model: `npm run gate -- --live --cache cache/live_run.json --out out/live`, then `npm run compare -- out/live/results.json`.
 15. **Language:** client messages are in English (US/UK clients), even when the brief was written in Portuguese.
 
 ## What breaks it, and how I'd monitor it
 
 - **Approvals worded in a new way** ("pode ir", "fine by me"): they're missed and the brief stays blocked. That fails safe, but it's annoying. Fix: the approval buttons and custom field above. Watch: rush blocks that the Squad Lead overrides.
-- **Model drift or false positives:** track the weekly Brain-rule block rate and the *Override block* rate. Re-run `compare_to_key.py` on a growing answer key before changing model or prompt.
+- **Model drift or false positives:** track the weekly Brain-rule block rate and the *Override block* rate. Re-run `npm run compare` on a growing answer key before changing model or prompt.
 - **Model API down:** the count of `unchecked` in `results.json` goes up and briefs pile up in "Needs review". Alert if it's above 0 for an hour.
 - **Stale catalog:** a spike in `product_unknown` means the catalog sync broke, not the clients.
 

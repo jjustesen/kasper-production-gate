@@ -1,0 +1,23 @@
+{
+  "name": "kasper-production-gate",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kāsper AI Tech Lead test: production gate (Option B)",
+  "type": "module",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "gate": "node src/cli.ts",
+    "gate:live": "node src/cli.ts --live",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "compare": "node scripts/compare-to-key.ts"
+  },
+  "optionalDependencies": {
+    "@anthropic-ai/sdk": "^0.135.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}

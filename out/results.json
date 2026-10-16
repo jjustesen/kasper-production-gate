@@ -130,12 +130,12 @@
       "status": "BLOCKED",
       "reasons": [
         {
+          "client_ask": "Our catalog shows Hazelnut Tin as no longer available. Should we feature a different product instead?",
+          "evidence": null,
           "rule": 4,
           "code": "product_inactive",
           "audience": "client",
-          "detail": "Hazelnut Tin [NP-TIN-HAZ] is not active (Discontinued 2026-09-30).",
-          "client_ask": "Our catalog shows Hazelnut Tin as no longer available. Should we feature a different product instead?",
-          "evidence": null
+          "detail": "Hazelnut Tin [NP-TIN-HAZ] is not active (Discontinued 2026-09-30)."
         }
       ],
       "checks": {
@@ -180,12 +180,12 @@
       "status": "BLOCKED",
       "reasons": [
         {
+          "client_ask": "\"barista pours into a takeaway cup\" goes against a brand rule we have on file (\"Always show the can or bag, never a generic cup\"). Could you share an alternative?",
+          "evidence": "barista pours into a takeaway cup",
           "rule": 6,
           "code": "brain_rule",
           "audience": "client",
-          "detail": "Breaks Brain rule \"Always show the can or bag, never a generic cup.\" ('barista pours into a takeaway cup').",
-          "client_ask": "\"barista pours into a takeaway cup\" goes against a brand rule we have on file (\"Always show the can or bag, never a generic cup\"). Could you share an alternative?",
-          "evidence": "barista pours into a takeaway cup"
+          "detail": "Breaks Brain rule \"Always show the can or bag, never a generic cup.\" ('barista pours into a takeaway cup')."
         }
       ],
       "checks": {
@@ -322,20 +322,20 @@
       "status": "BLOCKED",
       "reasons": [
         {
+          "client_ask": "The copy includes \"before and after\", which is on the list of claims we've agreed not to use. Could you share an alternative line?",
+          "evidence": "before and after",
           "rule": 6,
           "code": "banned_claim",
           "audience": "client",
-          "detail": "Copy uses banned claim 'before and after'.",
-          "client_ask": "The copy includes \"before and after\", which is on the list of claims we've agreed not to use. Could you share an alternative line?",
-          "evidence": "before and after"
+          "detail": "Copy uses banned claim 'before and after'."
         },
         {
+          "client_ask": "\"Before and after: real customer, 14 days of Vitamin C\" goes against a brand rule we have on file (\"No before/after imagery or copy (client legal, Oct 2026)\"). Could you share an alternative?",
+          "evidence": "Before and after: real customer, 14 days of Vitamin C",
           "rule": 6,
           "code": "brain_rule",
           "audience": "client",
-          "detail": "Breaks Brain rule \"No before/after imagery or copy (client legal, Oct 2026).\" ('Before and after: real customer, 14 days of Vitamin C').",
-          "client_ask": "\"Before and after: real customer, 14 days of Vitamin C\" goes against a brand rule we have on file (\"No before/after imagery or copy (client legal, Oct 2026)\"). Could you share an alternative?",
-          "evidence": "Before and after: real customer, 14 days of Vitamin C"
+          "detail": "Breaks Brain rule \"No before/after imagery or copy (client legal, Oct 2026).\" ('Before and after: real customer, 14 days of Vitamin C')."
         }
       ],
       "checks": {
@@ -511,12 +511,12 @@
       "status": "BLOCKED",
       "reasons": [
         {
+          "client_ask": "Could you confirm the platforms and formats (aspect ratio) for this brief?",
+          "evidence": null,
           "rule": 2,
           "code": "missing_fields",
           "audience": "client",
-          "detail": "Missing: platforms, formats (aspect ratio).",
-          "client_ask": "Could you confirm the platforms and formats (aspect ratio) for this brief?",
-          "evidence": null
+          "detail": "Missing: platforms, formats (aspect ratio)."
         }
       ],
       "checks": {
@@ -563,12 +563,12 @@
       "status": "BLOCKED",
       "reasons": [
         {
+          "client_ask": "The brief says 50% off, but our agreed cap is 30%. Should we go with 30% (or lower)?",
+          "evidence": null,
           "rule": 6,
           "code": "discount_over_cap",
           "audience": "client",
-          "detail": "Discount of 50% is above the 30% cap.",
-          "client_ask": "The brief says 50% off, but our agreed cap is 30%. Should we go with 30% (or lower)?",
-          "evidence": null
+          "detail": "Discount of 50% is above the 30% cap."
         }
       ],
       "checks": {
@@ -744,12 +744,12 @@
       "status": "BLOCKED",
       "reasons": [
         {
+          "client_ask": "Could we move the due date to Friday 16 October? That gives the team the time this needs.",
+          "evidence": null,
           "rule": 3,
           "code": "turnaround",
           "audience": "approval",
-          "detail": "Due Wed 14 Oct is 1 business day(s) out; statics need 3. Earliest normal date: Fri 16 Oct. Juliana said rush ok, but only the Squad Lead (Louise) can approve a rush.",
-          "client_ask": "Could we move the due date to Friday 16 October? That gives the team the time this needs.",
-          "evidence": null
+          "detail": "Due Wed 14 Oct is 1 business day(s) out; statics need 3. Earliest normal date: Fri 16 Oct. Juliana said rush ok, but only the Squad Lead (Louise) can approve a rush."
         }
       ],
       "checks": {
@@ -796,12 +796,12 @@
       "status": "BLOCKED",
       "reasons": [
         {
+          "client_ask": "This would take you past this month's plan (videos 6/4). Should we schedule it for next month, or add it as extra work?",
+          "evidence": null,
           "rule": 7,
           "code": "quota_exceeded",
           "audience": "approval",
-          "detail": "Would take Pawfect Treats over this month's plan: videos 6/4.",
-          "client_ask": "This would take you past this month's plan (videos 6/4). Should we schedule it for next month, or add it as extra work?",
-          "evidence": null
+          "detail": "Would take Pawfect Treats over this month's plan: videos 6/4."
         }
       ],
       "checks": {
@@ -938,44 +938,44 @@
       "status": "BLOCKED",
       "reasons": [
         {
-          "rule": 6,
-          "code": "banned_claim",
-          "audience": "client",
-          "detail": "Copy uses banned claim 'cure'.",
           "client_ask": "The copy includes \"cure\", which is on the list of claims we've agreed not to use. Could you share an alternative line?",
-          "evidence": "cure"
-        },
-        {
+          "evidence": "cure",
           "rule": 6,
           "code": "banned_claim",
           "audience": "client",
-          "detail": "Copy uses banned claim 'insomnia'.",
+          "detail": "Copy uses banned claim 'cure'."
+        },
+        {
           "client_ask": "The copy includes \"insomnia\", which is on the list of claims we've agreed not to use. Could you share an alternative line?",
-          "evidence": "insomnia"
-        },
-        {
+          "evidence": "insomnia",
           "rule": 6,
           "code": "banned_claim",
           "audience": "client",
-          "detail": "Copy uses banned claim 'clinically proven'.",
+          "detail": "Copy uses banned claim 'insomnia'."
+        },
+        {
           "client_ask": "The copy includes \"clinically proven\", which is on the list of claims we've agreed not to use. Could you share an alternative line?",
-          "evidence": "clinically proven"
+          "evidence": "clinically proven",
+          "rule": 6,
+          "code": "banned_claim",
+          "audience": "client",
+          "detail": "Copy uses banned claim 'clinically proven'."
         },
         {
-          "rule": 6,
-          "code": "brain_rule",
-          "audience": "client",
-          "detail": "Breaks Brain rule \"Wellness, not medical: no insomnia, cure or treatment claims.\" ('Clinically proven to cure insomnia in 7 nights').",
           "client_ask": "\"Clinically proven to cure insomnia in 7 nights\" goes against a brand rule we have on file (\"Wellness, not medical: no insomnia, cure or treatment claims\"). Could you share an alternative?",
-          "evidence": "Clinically proven to cure insomnia in 7 nights"
-        },
-        {
+          "evidence": "Clinically proven to cure insomnia in 7 nights",
           "rule": 6,
           "code": "brain_rule",
           "audience": "client",
-          "detail": "Breaks Brain rule \"'Clinically proven' only with a linked study (none exists today).\" ('Clinically proven').",
+          "detail": "Breaks Brain rule \"Wellness, not medical: no insomnia, cure or treatment claims.\" ('Clinically proven to cure insomnia in 7 nights')."
+        },
+        {
           "client_ask": "\"Clinically proven\" goes against a brand rule we have on file (\"'Clinically proven' only with a linked study (none exists today)\"). Could you share an alternative?",
-          "evidence": "Clinically proven"
+          "evidence": "Clinically proven",
+          "rule": 6,
+          "code": "brain_rule",
+          "audience": "client",
+          "detail": "Breaks Brain rule \"'Clinically proven' only with a linked study (none exists today).\" ('Clinically proven')."
         }
       ],
       "checks": {
@@ -1108,12 +1108,12 @@
       "status": "BLOCKED",
       "reasons": [
         {
+          "client_ask": null,
+          "evidence": null,
           "rule": 1,
           "code": "client_paused",
           "audience": "internal",
-          "detail": "Brightside Kids is paused: Paused 2026-10-05 pending overdue invoice. No new production until finance un-pauses.",
-          "client_ask": null,
-          "evidence": null
+          "detail": "Brightside Kids is paused: Paused 2026-10-05 pending overdue invoice. No new production until finance un-pauses."
         }
       ],
       "checks": {
@@ -1246,20 +1246,20 @@
       "status": "BLOCKED",
       "reasons": [
         {
+          "client_ask": "The copy includes \"cura\", which is on the list of claims we've agreed not to use. Could you share an alternative line?",
+          "evidence": "cura",
           "rule": 6,
           "code": "banned_claim",
           "audience": "client",
-          "detail": "Copy uses banned claim 'cura'.",
-          "client_ask": "The copy includes \"cura\", which is on the list of claims we've agreed not to use. Could you share an alternative line?",
-          "evidence": "cura"
+          "detail": "Copy uses banned claim 'cura'."
         },
         {
+          "client_ask": "\"a cura para a pele seca\" goes against a brand rule we have on file (\"Cosmetic, not medical: never claim to treat, cure or heal a skin condition\"). Could you share an alternative?",
+          "evidence": "a cura para a pele seca",
           "rule": 6,
           "code": "brain_rule",
           "audience": "client",
-          "detail": "Breaks Brain rule \"Cosmetic, not medical: never claim to treat, cure or heal a skin condition.\" ('a cura para a pele seca').",
-          "client_ask": "\"a cura para a pele seca\" goes against a brand rule we have on file (\"Cosmetic, not medical: never claim to treat, cure or heal a skin condition\"). Could you share an alternative?",
-          "evidence": "a cura para a pele seca"
+          "detail": "Breaks Brain rule \"Cosmetic, not medical: never claim to treat, cure or heal a skin condition.\" ('a cura para a pele seca')."
         }
       ],
       "checks": {
@@ -1435,12 +1435,12 @@
       "status": "BLOCKED",
       "reasons": [
         {
+          "client_ask": "\"The best-tasting subscription in the UK\" goes against a brand rule we have on file (\"No superlatives we can't prove\"). Could you share an alternative?",
+          "evidence": "The best-tasting subscription in the UK",
           "rule": 6,
           "code": "brain_rule",
           "audience": "client",
-          "detail": "Breaks Brain rule \"No superlatives we can't prove.\" ('The best-tasting subscription in the UK').",
-          "client_ask": "\"The best-tasting subscription in the UK\" goes against a brand rule we have on file (\"No superlatives we can't prove\"). Could you share an alternative?",
-          "evidence": "The best-tasting subscription in the UK"
+          "detail": "Breaks Brain rule \"No superlatives we can't prove.\" ('The best-tasting subscription in the UK')."
         }
       ],
       "checks": {

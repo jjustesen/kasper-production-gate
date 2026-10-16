@@ -2,12 +2,15 @@
 
 Checks every new brief against the Definition of Ready and decides **PASS** (→ `Queued`) or **BLOCKED**. Every block comes with a reason, and where the client has to act, a ready-to-send clarification message. See [NOTES.md](NOTES.md) for the approach, costs and assumptions.
 
+It's written in TypeScript to match Kāsper's stack (Next.js, Supabase, Vercel). It runs directly on Node with no build step: Node 23.6 and later run `.ts` files natively.
+
 ## Run
 
-Needs Python 3.10+. There are no dependencies for the default run.
+Needs Node 23.6 or later.
 
 ```bash
-python -m gate
+npm install
+npm run gate
 ```
 
 This reads `data/option_b_gate/` and writes dry-run outputs to `out/`:
@@ -22,17 +25,17 @@ This reads `data/option_b_gate/` and writes dry-run outputs to `out/`:
 | `out/slack/alerts.json` | Block Kit alert per blocked brief for `#int-<client>` |
 
 Options:
-- `--now 2026-10-14T09:00:00Z` sets the check time.
-- `--live` calls Claude Haiku 5.5 on Brain-rule cache misses. It needs `pip install anthropic` and Anthropic credentials.
+- `npm run gate -- --now 2026-10-14T09:00:00Z` sets the check time.
+- `npm run gate -- --live` calls Claude Haiku 5.5 on Brain-rule cache misses. It needs Anthropic credentials (`ANTHROPIC_API_KEY`).
 
 ## Test
 
 ```bash
-pip install pytest
-python -m pytest -q
+npm test            # 82 tests (Vitest)
+npm run typecheck   # tsc --noEmit
 ```
 
-The suite has 81 tests:
+The suite covers:
 - the 30 briefs against the hand-written answer key in `expected/gate_expected.json`,
 - per-rule edge cases (weekends, rush by a non-lead, quota order, blocked briefs not using quota, word boundaries, Portuguese claims),
 - the Brain checker with a mocked API (caching, failing closed, skipped rules).
@@ -40,21 +43,24 @@ The suite has 81 tests:
 ## Layout
 
 ```
-gate/
-  gate.py           Definition of Ready rules 1-7
-  business_days.py  day-0 business-day maths
-  products.py       SKU / name / alias resolution per client
-  claims.py         banned phrases (whole words) and discount caps
-  approvals.py      Squad Lead rush / overage approvals in comments
-  brain.py          the one LLM step: Brain rules, cached, fails closed
-  messages.py       client clarification templates
-  render.py         ClickUp actions, Slack Block Kit, Markdown report
-  preview.py        out/preview.html, a browsable view of the run
+src/
+  gate.ts                Definition of Ready rules 1-7
+  dates.ts               day-0 business-day maths and date formatting
+  products.ts            SKU / name / alias resolution per client
+  claims.ts              banned phrases (whole words) and discount caps
+  approvals.ts           Squad Lead rush / overage approvals in comments
+  brain.ts               the one LLM step: Brain rules, cached, fails closed
+  messages.ts            client clarification templates
+  render.ts              ClickUp actions, Slack Block Kit, Markdown report
+  preview.ts             out/preview.html (page in preview-template.html)
+  models.ts, config.ts   data shapes and thresholds
+  cli.ts                 reads the data, runs the gate, writes out/
+tests/                   Vitest suites
 designs/
   option_a_onboarding.md   one-page design, Option A (onboarding)
   option_c_health.md       one-page design, Option C (squad health)
   option_*_screens.html    mockups of those designs' outputs, with the real data (not built)
 cache/brain_cache.json   Brain-rule answers (hand-labelled seed, see NOTES §5)
 expected/                answer key
-scripts/compare_to_key.py  compare any run (e.g. a live model run) with the key
+scripts/compare-to-key.ts  compare any run (e.g. a live model run) with the key
 ```

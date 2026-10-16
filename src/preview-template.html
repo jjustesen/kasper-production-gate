@@ -1,10 +1,4 @@
-"""A self-contained HTML page that shows a gate run the way people would see it:
-the squad digest in Slack, each brief's ClickUp task, the #int alert and the
-client draft. It renders the real run output; nothing is mocked here."""
-
-import json
-
-TEMPLATE = r"""<!doctype html>
+<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Production gate preview</title>
 <style>
@@ -136,10 +130,3 @@ function draw() {
 }
 draw();
 </script></body></html>
-"""
-
-
-def preview_html(results: dict, clickup: list[dict], squad_of: dict[str, str]) -> str:
-    data = json.dumps({"results": results, "clickup": clickup, "squadOf": squad_of}, ensure_ascii=False)
-    # Keep "</script>" inside strings from closing the script tag.
-    return TEMPLATE.replace("__DATA__", data.replace("</", "<\\/"))
