@@ -7,7 +7,9 @@
     "brain": {
       "cache_hits": 29,
       "live_calls": 0,
-      "unchecked": 0
+      "unchecked": 0,
+      "input_tokens": 0,
+      "output_tokens": 0
     }
   },
   "quota_after_run": {

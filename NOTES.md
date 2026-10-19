@@ -80,12 +80,12 @@ One check needs language understanding: the client's free-text **Brain rules**, 
 
 - **Model:** Claude Haiku 5.5 (`claude-haiku-5-5`, list price $0.10 / $0.50 per million input/output tokens), effort `low`, JSON-schema output.
 - **What for:** one call per brief that reaches rule 6 with Brain rules on file, answering "does this copy break any of these rules?".
-- **Per call:** about 400 input tokens (instructions, about 2 rules and about 40 words of copy) and about 250 output tokens including its short reasoning. That's about **$0.0002 per call** at list price, or **$0.001 per call** with the test's standard assumption.
+- **Per call, measured on a live run (2026-10-19, 29 calls):** 913 input tokens (system prompt with examples, the client's rules, the copy) and 59 output tokens. That's **$0.00012 per call** at list price, or **$0.001 per call** with the test's standard assumption. The live answers are in `cache/live_run.json`.
 
 | | Calls/month | Cost/month (test assumption, $0.001/call) | At Haiku list price |
 |---|---|---|---|
-| ~400 briefs, plus ~50% re-checks after edits (unchanged copy is a cache hit) | ~600 | **~$0.60** | ~$0.12 |
-| Same at ~25 clients (400 briefs/month is already the real-company figure) | ~600 | ~$0.60 | ~$0.12 |
+| ~400 briefs, plus ~50% re-checks after edits (unchanged copy is a cache hit) | ~600 | **~$0.60** | ~$0.07 |
+| Same at ~25 clients (400 briefs/month is already the real-company figure) | ~600 | ~$0.60 | ~$0.07 |
 | Everything else (ClickUp automation ~600 of 10,000 actions, Vercel function and cron, Slack) | | ~$0 | |
 | **Total** | | **≈ $1/month** | |
 
@@ -143,13 +143,15 @@ Team-lead bot template → reads the "Gate result" field for the morning briefin
 11. **Assets:** `use_studio_catalog: true` satisfies the assets rule. I don't check that the Studio actually has shots for that SKU.
 12. **Paused client:** this is an internal block. Finance owns that conversation, so no message is drafted for the client and no model is called.
 13. **What the model judges:** the model skips numeric Brain rules ("discounts capped at 30%"), because code checks those. When a Brain-rule hit quotes the same words as a banned phrase, the client is asked about it once.
-14. **Where the cached answers came from:** there are no API credentials in my environment, so `cache/brain_cache.json` holds **hand-labelled** answers for the 29 Brain checks (marked `"source": "hand-labelled seed"`). The live path is tested with a mocked API: request shape, parsing, caching and failure handling. To check the real model: `npm run gate -- --live --cache cache/live_run.json --out out/live`, then `npm run compare -- out/live/results.json`.
+14. **Two caches, on purpose.** `cache/brain_cache.json` is a **hand-labelled** answer set (marked `"source": "hand-labelled seed"`): it is the test fixture, so `npm test` and `npm run gate` are deterministic and free. `cache/live_run.json` holds the **real Claude Haiku 5.5 answers** from `npm run gate:live` (needs `ANTHROPIC_API_KEY` in `.env`), compared with the key by `npm run compare -- out/live/results.json`.
+    - **Result of the live run: 29 of 30 briefs match the key.** Every violation the key expects was found (BR-03's takeaway cup, BR-29's superlative, the banned-claim briefs), with the offending words quoted verbatim. The one difference is BR-30 (Halo, "Block the light, keep the calm"): the model answered *unsure* against "Wellness, not medical", so the gate sent it to human review instead of queueing it. That is the fail-closed behaviour working as designed; a person decides in seconds.
+    - **What the live run taught me:** the first prompt made the model answer *unsure* for "Always show the can or bag" on every Northpeak brief whose copy described no imagery (6 of 9), because a static will show *something*. Telling the model that silence is never a violation, with four short examples, fixed it. Prompt changes bump `PROMPT_VERSION`, which is part of the cache key, so stale answers are never reused.
 15. **Language:** client messages are in English (US/UK clients), even when the brief was written in Portuguese.
 
 ## What breaks it, and how I'd monitor it
 
 - **Approvals worded in a new way** ("pode ir", "fine by me"): they're missed and the brief stays blocked. That fails safe, but it's annoying. Fix: the approval buttons and custom field above. Watch: rush blocks that the Squad Lead overrides.
-- **Model drift or false positives:** track the weekly Brain-rule block rate and the *Override block* rate. Re-run `npm run compare` on a growing answer key before changing model or prompt.
+- **Model drift or false positives:** track the weekly Brain-rule block rate, the *unsure* rate and the *Override block* rate. Re-run `npm run gate:live` and `npm run compare` on a growing answer key before changing model or prompt; the live run above is the baseline (29/30, one *unsure*).
 - **Model API down:** the count of `unchecked` in `results.json` goes up and briefs pile up in "Needs review". Alert if it's above 0 for an hour.
 - **Stale catalog:** a spike in `product_unknown` means the catalog sync broke, not the clients.
 

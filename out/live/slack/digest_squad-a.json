@@ -1,0 +1,44 @@
+{
+  "channel": "#squad-a",
+  "text": "Gate: 8 of 19 briefs blocked",
+  "blocks": [
+    {
+      "type": "header",
+      "text": {
+        "type": "plain_text",
+        "text": "Production gate · Squad A · Tue 13 Oct 09:00 UTC"
+      }
+    },
+    {
+      "type": "section",
+      "fields": [
+        {
+          "type": "mrkdwn",
+          "text": "*Checked*\n19"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*Queued*\n11"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*Blocked*\n8"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Blocked (reply to the client the same day)*\n• `BR-02` Northpeak Coffee · blocked: Hazelnut Tin [NP-TIN-HAZ] is not active (Discontinued 2026-09-30)\n• `BR-03` Northpeak Coffee · blocked: breaks Brain rule: 'barista pours into a takeaway cup'\n• `BR-06` Lumen Skin · blocked: banned claims: 'before and after'\n• `BR-10` Lumen Skin · blocked: Missing: platforms, formats (aspect ratio)\n• `BR-11` Ridge Outdoor · blocked: Discount of 50% is above the 30% cap\n• `BR-15` Ridge Outdoor · needs approval: Due Wed 14 Oct is 1 business day(s) out; statics need 3. Earliest normal date: Fri 16 Oct. Juliana said rush ok, but only the Squad Lead (Louise) can approve a rush\n• `BR-25` Lumen Skin · blocked: banned claims: 'cura'\n• `BR-29` Northpeak Coffee · blocked: breaks Brain rule: 'The best-tasting subscription in the UK.'"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*This month's quota after this run*\n• Northpeak Coffee: statics 18/20 · videos 2/6\n• Lumen Skin: statics 12/16 · videos 1/4\n• Ridge Outdoor: statics 12/12 · videos 3/4 · *full*"
+      }
+    }
+  ]
+}

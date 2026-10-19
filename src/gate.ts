@@ -7,10 +7,32 @@
 import { findApproval } from "./approvals.ts";
 import type { BrainCheck } from "./brain.ts";
 import { findBanned, maxDiscount } from "./claims.ts";
-import { DEFAULT_CHECK_TIME, MIN_BUSINESS_DAYS_STATIC, MIN_BUSINESS_DAYS_VIDEO } from "./config.ts";
-import { addBusinessDays, businessDaysBetween, dayOf, longDay, parseDate, shortDay } from "./dates.ts";
+import {
+  DEFAULT_CHECK_TIME,
+  MIN_BUSINESS_DAYS_STATIC,
+  MIN_BUSINESS_DAYS_VIDEO,
+} from "./config.ts";
+import {
+  addBusinessDays,
+  businessDaysBetween,
+  dayOf,
+  longDay,
+  parseDate,
+  shortDay,
+} from "./dates.ts";
 import { attach, humanJoin } from "./messages.ts";
-import { BLOCKED, KINDS, PASS, reason, type Brief, type CatalogItem, type Client, type Counts, type Quota, type Verdict } from "./models.ts";
+import {
+  BLOCKED,
+  KINDS,
+  PASS,
+  reason,
+  type Brief,
+  type CatalogItem,
+  type Client,
+  type Counts,
+  type Quota,
+  type Verdict,
+} from "./models.ts";
 import { buildIndex, isBrandOnly, resolve } from "./products.ts";
 
 const ASPECT_RATIO = /^\s*\d+(?:\.\d+)?:\d+(?:\.\d+)?\b/;
@@ -48,7 +70,9 @@ export class Gate {
   }
 
   async run(briefs: Brief[]): Promise<Verdict[]> {
-    const ordered = [...briefs].sort((a, b) => a.created_at.localeCompare(b.created_at));
+    const ordered = [...briefs].sort((a, b) =>
+      a.created_at.localeCompare(b.created_at)
+    );
     const verdicts: Verdict[] = [];
     for (const brief of ordered) verdicts.push(await this.check(brief)); // in order: quota depends on earlier briefs
     return verdicts;
@@ -56,7 +80,10 @@ export class Gate {
 
   async check(brief: Brief): Promise<Verdict> {
     const client = this.clients.get(brief.client);
-    if (!client) throw new Error(`${brief.id}: unknown client ${JSON.stringify(brief.client)}`);
+    if (!client)
+      throw new Error(
+        `${brief.id}: unknown client ${JSON.stringify(brief.client)}`
+      );
     const v: Verdict = {
       brief_id: brief.id,
       client: client.client,
@@ -99,8 +126,14 @@ export class Gate {
     const client = this.clients.get(clientName)!;
     const accepted = this.accepted.get(clientName)!;
     return {
-      statics: { used: client.used_this_month.statics + accepted.statics, plan: client.plan_per_month.statics },
-      videos: { used: client.used_this_month.videos + accepted.videos, plan: client.plan_per_month.videos },
+      statics: {
+        used: client.used_this_month.statics + accepted.statics,
+        plan: client.plan_per_month.statics,
+      },
+      videos: {
+        used: client.used_this_month.videos + accepted.videos,
+        plan: client.plan_per_month.videos,
+      },
     };
   }
 
@@ -111,10 +144,16 @@ export class Gate {
       return;
     }
     v.checks["1 client active"] = "failed";
-    v.reasons.push(reason({
-      rule: 1, code: "client_paused", audience: "internal",
-      detail: `${client.client} is ${client.status}: ${client.paused_reason ?? "no reason on file"}`,
-    }));
+    v.reasons.push(
+      reason({
+        rule: 1,
+        code: "client_paused",
+        audience: "internal",
+        detail: `${client.client} is ${client.status}: ${
+          client.paused_reason ?? "no reason on file"
+        }`,
+      })
+    );
   }
 
   // Rule 2 -------------------------------------------------------------------
@@ -122,9 +161,16 @@ export class Gate {
     const missing: string[] = [];
     if (!brief.platforms?.length) missing.push("platforms");
     const formats = brief.formats ?? [];
-    if (!formats.length || !formats.every((f) => ASPECT_RATIO.test(f))) missing.push("formats (aspect ratio)");
-    if (formats.length && v.deliverables.videos && !formats.some((f) => DURATION.test(f))) missing.push("video duration");
-    if (!v.deliverables.statics && !v.deliverables.videos) missing.push("deliverable counts");
+    if (!formats.length || !formats.every((f) => ASPECT_RATIO.test(f)))
+      missing.push("formats (aspect ratio)");
+    if (
+      formats.length &&
+      v.deliverables.videos &&
+      !formats.some((f) => DURATION.test(f))
+    )
+      missing.push("video duration");
+    if (!v.deliverables.statics && !v.deliverables.videos)
+      missing.push("deliverable counts");
     if (!parseDate(brief.due_date)) missing.push("due date");
     if (!brief.products?.length) missing.push('products (or "brand")');
 
@@ -133,11 +179,17 @@ export class Gate {
       return;
     }
     v.checks["2 required fields"] = "failed";
-    v.reasons.push(reason({
-      rule: 2, code: "missing_fields", audience: "client",
-      detail: `Missing: ${missing.join(", ")}.`,
-      client_ask: `Could you confirm the ${humanJoin(missing)} for this brief?`,
-    }));
+    v.reasons.push(
+      reason({
+        rule: 2,
+        code: "missing_fields",
+        audience: "client",
+        detail: `Missing: ${missing.join(", ")}.`,
+        client_ask: `Could you confirm the ${humanJoin(
+          missing
+        )} for this brief?`,
+      })
+    );
   }
 
   // Rule 3 -------------------------------------------------------------------
@@ -148,14 +200,21 @@ export class Gate {
       return;
     }
     const hasVideo = v.deliverables.videos > 0;
-    const minimum = hasVideo ? MIN_BUSINESS_DAYS_VIDEO : MIN_BUSINESS_DAYS_STATIC;
+    const minimum = hasVideo
+      ? MIN_BUSINESS_DAYS_VIDEO
+      : MIN_BUSINESS_DAYS_STATIC;
     v.business_days = businessDaysBetween(this.today, due);
     if (v.business_days >= minimum) {
       v.checks["3 turnaround"] = "ok";
       return;
     }
 
-    const { lead, others } = findApproval(brief.comments ?? [], "rush", client.squad_lead, this.now);
+    const { lead, others } = findApproval(
+      brief.comments ?? [],
+      "rush",
+      client.squad_lead,
+      this.now
+    );
     if (lead) {
       v.checks["3 turnaround"] = "ok (rush approved)";
       v.approvals.push("rush");
@@ -166,16 +225,25 @@ export class Gate {
     const earliest = addBusinessDays(this.today, minimum);
     let detail =
       `Due ${shortDay(due)} is ${v.business_days} business day(s) out; ` +
-      `${hasVideo ? "video" : "statics"} need ${minimum}. Earliest normal date: ${shortDay(earliest)}.`;
+      `${
+        hasVideo ? "video" : "statics"
+      } need ${minimum}. Earliest normal date: ${shortDay(earliest)}.`;
     if (others.length) {
       const names = [...new Set(others.map((c) => c.by))].sort().join(", ");
       detail += ` ${names} said rush ok, but only the Squad Lead (${client.squad_lead}) can approve a rush.`;
     }
     v.checks["3 turnaround"] = "failed";
-    v.reasons.push(reason({
-      rule: 3, code: "turnaround", audience: "approval", detail,
-      client_ask: `Could we move the due date to ${longDay(earliest)}? That gives the team the time this needs.`,
-    }));
+    v.reasons.push(
+      reason({
+        rule: 3,
+        code: "turnaround",
+        audience: "approval",
+        detail,
+        client_ask: `Could we move the due date to ${longDay(
+          earliest
+        )}? That gives the team the time this needs.`,
+      })
+    );
   }
 
   // Rule 4 -------------------------------------------------------------------
@@ -192,19 +260,27 @@ export class Gate {
       const item = resolve(name, index);
       if (!item) {
         ok = false;
-        v.reasons.push(reason({
-          rule: 4, code: "product_unknown", audience: "client",
-          detail: `'${name}' is not in ${client.client}'s catalog.`,
-          client_ask: `We couldn't find '${name}' in your product catalog. Which product (or SKU) is this?`,
-        }));
+        v.reasons.push(
+          reason({
+            rule: 4,
+            code: "product_unknown",
+            audience: "client",
+            detail: `'${name}' is not in ${client.client}'s catalog.`,
+            client_ask: `We couldn't find '${name}' in your product catalog. Which product (or SKU) is this?`,
+          })
+        );
       } else if (item.active === false) {
         ok = false;
         const note = item.note ? ` (${item.note})` : "";
-        v.reasons.push(reason({
-          rule: 4, code: "product_inactive", audience: "client",
-          detail: `${item.name} [${item.sku}] is not active${note}.`,
-          client_ask: `Our catalog shows ${item.name} as no longer available. Should we feature a different product instead?`,
-        }));
+        v.reasons.push(
+          reason({
+            rule: 4,
+            code: "product_inactive",
+            audience: "client",
+            detail: `${item.name} [${item.sku}] is not active${note}.`,
+            client_ask: `Our catalog shows ${item.name} as no longer available. Should we feature a different product instead?`,
+          })
+        );
       } else {
         v.skus.push(item.sku);
       }
@@ -220,11 +296,16 @@ export class Gate {
       return;
     }
     v.checks["5 assets"] = "failed";
-    v.reasons.push(reason({
-      rule: 5, code: "assets_missing", audience: "client",
-      detail: "No Drive link and no note to use Studio catalog shots.",
-      client_ask: "Could you share a Drive link with the assets, or confirm we should use the product shots we already have?",
-    }));
+    v.reasons.push(
+      reason({
+        rule: 5,
+        code: "assets_missing",
+        audience: "client",
+        detail: "No Drive link and no note to use Studio catalog shots.",
+        client_ask:
+          "Could you share a Drive link with the assets, or confirm we should use the product shots we already have?",
+      })
+    );
   }
 
   // Rule 6 -------------------------------------------------------------------
@@ -233,45 +314,74 @@ export class Gate {
     const before = v.reasons.length;
 
     for (const phrase of findBanned(text, client.banned_claims ?? [])) {
-      v.reasons.push(reason({
-        rule: 6, code: "banned_claim", audience: "client", evidence: phrase,
-        detail: `Copy uses banned claim '${phrase}'.`,
-        client_ask: `The copy includes "${phrase}", which is on the list of claims we've agreed not to use. Could you share an alternative line?`,
-      }));
+      v.reasons.push(
+        reason({
+          rule: 6,
+          code: "banned_claim",
+          audience: "client",
+          evidence: phrase,
+          detail: `Copy uses banned claim '${phrase}'.`,
+          client_ask: `The copy includes "${phrase}", which is on the list of claims we've agreed not to use. Could you share an alternative line?`,
+        })
+      );
     }
 
     const discount = maxDiscount(text);
     const cap = client.max_discount_pct;
     if (discount !== null && cap !== undefined && discount > cap) {
-      v.reasons.push(reason({
-        rule: 6, code: "discount_over_cap", audience: "client",
-        detail: `Discount of ${discount}% is above the ${cap}% cap.`,
-        client_ask: `The brief says ${discount}% off, but our agreed cap is ${cap}%. Should we go with ${cap}% (or lower)?`,
-      }));
+      v.reasons.push(
+        reason({
+          rule: 6,
+          code: "discount_over_cap",
+          audience: "client",
+          detail: `Discount of ${discount}% is above the ${cap}% cap.`,
+          client_ask: `The brief says ${discount}% off, but our agreed cap is ${cap}%. Should we go with ${cap}% (or lower)?`,
+        })
+      );
     }
 
     // The Brain-rule check is the only LLM step. Skip it when it can't
     // change anything: paused client, or no Brain rules on file.
     const rules = client.brain_rules ?? [];
     if (client.status !== "active" || !rules.length || !text.trim()) {
-      v.checks["6 claims"] = v.reasons.length > before ? "failed" : "ok (Brain check skipped)";
+      v.checks["6 claims"] =
+        v.reasons.length > before ? "failed" : "ok (Brain check skipped)";
       return;
     }
 
-    const { verdicts, source } = await this.brain.check(client.client, text, rules);
+    const { verdicts, source } = await this.brain.check(
+      client.client,
+      text,
+      rules
+    );
     v.brain_source = source;
     for (const bv of verdicts) {
       if (bv.verdict === "violates") {
-        v.reasons.push(reason({
-          rule: 6, code: "brain_rule", audience: "client", evidence: bv.evidence,
-          detail: `Breaks Brain rule "${bv.rule}" ('${bv.evidence}').`,
-          client_ask: `"${bv.evidence}" goes against a brand rule we have on file ("${bv.rule.replace(/\.+$/, "")}"). Could you share an alternative?`,
-        }));
+        v.reasons.push(
+          reason({
+            rule: 6,
+            code: "brain_rule",
+            audience: "client",
+            evidence: bv.evidence,
+            detail: `Breaks Brain rule "${bv.rule}" ('${bv.evidence}').`,
+            client_ask: `"${
+              bv.evidence
+            }" goes against a brand rule we have on file ("${bv.rule.replace(
+              /\.+$/,
+              ""
+            )}"). Could you share an alternative?`,
+          })
+        );
       } else if (bv.verdict === "unsure") {
-        v.reasons.push(reason({
-          rule: 6, code: "brain_unsure", audience: "internal", evidence: bv.evidence,
-          detail: `Couldn't confirm the copy follows "${bv.rule}". A person should check it.`,
-        }));
+        v.reasons.push(
+          reason({
+            rule: 6,
+            code: "brain_unsure",
+            audience: "internal",
+            evidence: bv.evidence,
+            detail: `Couldn't confirm the copy follows "${bv.rule}". A person should check it.`,
+          })
+        );
       }
     }
     v.checks["6 claims"] = v.reasons.length > before ? "failed" : "ok";
@@ -292,7 +402,12 @@ export class Gate {
       return;
     }
 
-    const { lead } = findApproval(brief.comments ?? [], "overage", client.squad_lead, this.now);
+    const { lead } = findApproval(
+      brief.comments ?? [],
+      "overage",
+      client.squad_lead,
+      this.now
+    );
     if (lead) {
       v.checks["7 quota"] = "ok (overage approved)";
       v.approvals.push("overage");
@@ -300,12 +415,18 @@ export class Gate {
       return;
     }
 
-    const summary = over.map(([k, total, plan]) => `${k} ${total}/${plan}`).join("; ");
+    const summary = over
+      .map(([k, total, plan]) => `${k} ${total}/${plan}`)
+      .join("; ");
     v.checks["7 quota"] = "failed";
-    v.reasons.push(reason({
-      rule: 7, code: "quota_exceeded", audience: "approval",
-      detail: `Would take ${client.client} over this month's plan: ${summary}.`,
-      client_ask: `This would take you past this month's plan (${summary}). Should we schedule it for next month, or add it as extra work?`,
-    }));
+    v.reasons.push(
+      reason({
+        rule: 7,
+        code: "quota_exceeded",
+        audience: "approval",
+        detail: `Would take ${client.client} over this month's plan: ${summary}.`,
+        client_ask: `This would take you past this month's plan (${summary}). Should we schedule it for next month, or add it as extra work?`,
+      })
+    );
   }
 }

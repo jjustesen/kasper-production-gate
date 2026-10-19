@@ -37,7 +37,7 @@ describe("the 30 briefs match the answer key", () => {
 
 it("has the right totals and never calls the model for the paused client", () => {
   expect(Object.values(verdicts).filter((v) => v.status === "PASS")).toHaveLength(19);
-  expect(brain.stats).toEqual({ cache_hits: 29, live_calls: 0, unchecked: 0 }); // BR-22 never reaches the LLM
+  expect(brain.stats).toMatchObject({ cache_hits: 29, live_calls: 0, unchecked: 0 }); // BR-22 never reaches the LLM
 });
 
 it("gives every block a reason and a next step", () => {

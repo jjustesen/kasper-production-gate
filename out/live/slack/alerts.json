@@ -1,0 +1,669 @@
+[
+  {
+    "channel": "#int-northpeak-coffee",
+    "text": "Blocked: BR-02 Hazelnut Tin autumn promo",
+    "blocks": [
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Blocked* · *BR-02 · Hazelnut Tin autumn promo*\n3 statics · due 2026-10-21 · <@Louise>"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Why*\n• Hazelnut Tin [NP-TIN-HAZ] is not active (Discontinued 2026-09-30)."
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Draft for #ext-northpeak-coffee* (review before posting)\n>Hi team, before we start on \"Hazelnut Tin autumn promo\", one quick check: our catalog shows Hazelnut Tin as no longer available. Should we feature a different product instead?\n>As soon as we hear back, it goes straight into production."
+        }
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Post to client channel"
+            },
+            "action_id": "post_draft",
+            "value": "BR-02"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Edit draft"
+            },
+            "action_id": "edit_draft",
+            "value": "BR-02"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Override block"
+            },
+            "action_id": "override",
+            "value": "BR-02"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "channel": "#int-northpeak-coffee",
+    "text": "Blocked: BR-03 UGC cold brew cut-downs",
+    "blocks": [
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Blocked* · *BR-03 · UGC cold brew cut-downs*\n2 videos · due 2026-10-22 · <@Louise>"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Why*\n• Breaks Brain rule \"Always show the can or bag, never a generic cup.\" ('barista pours into a takeaway cup')."
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Draft for #ext-northpeak-coffee* (review before posting)\n>Hi team, before we start on \"UGC cold brew cut-downs\", one quick check: \"barista pours into a takeaway cup\" goes against a brand rule we have on file (\"Always show the can or bag, never a generic cup\"). Could you share an alternative?\n>As soon as we hear back, it goes straight into production."
+        }
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Post to client channel"
+            },
+            "action_id": "post_draft",
+            "value": "BR-03"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Edit draft"
+            },
+            "action_id": "edit_draft",
+            "value": "BR-03"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Override block"
+            },
+            "action_id": "override",
+            "value": "BR-03"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "channel": "#int-lumen-skin",
+    "text": "Blocked: BR-06 14-day glow results",
+    "blocks": [
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Blocked* · *BR-06 · 14-day glow results*\n3 statics · due 2026-10-22 · <@Louise>"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Why*\n• Copy uses banned claim 'before and after'.\n• Breaks Brain rule \"No before/after imagery or copy (client legal, Oct 2026).\" ('Before and after')."
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Draft for #ext-lumen-skin* (review before posting)\n>Hi team, before we start on \"14-day glow results\", one quick check: the copy includes \"before and after\", which is on the list of claims we've agreed not to use. Could you share an alternative line?\n>As soon as we hear back, it goes straight into production."
+        }
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Post to client channel"
+            },
+            "action_id": "post_draft",
+            "value": "BR-06"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Edit draft"
+            },
+            "action_id": "edit_draft",
+            "value": "BR-06"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Override block"
+            },
+            "action_id": "override",
+            "value": "BR-06"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "channel": "#int-lumen-skin",
+    "text": "Blocked: BR-10 Starter kit gifting",
+    "blocks": [
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Blocked* · *BR-10 · Starter kit gifting*\n3 statics · due 2026-10-27 · <@Louise>"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Why*\n• Missing: platforms, formats (aspect ratio)."
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Draft for #ext-lumen-skin* (review before posting)\n>Hi team, before we start on \"Starter kit gifting\", one quick check: could you confirm the platforms and formats (aspect ratio) for this brief?\n>As soon as we hear back, it goes straight into production."
+        }
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Post to client channel"
+            },
+            "action_id": "post_draft",
+            "value": "BR-10"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Edit draft"
+            },
+            "action_id": "edit_draft",
+            "value": "BR-10"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Override block"
+            },
+            "action_id": "override",
+            "value": "BR-10"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "channel": "#int-ridge-outdoor",
+    "text": "Blocked: BR-11 Black Friday early access",
+    "blocks": [
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Blocked* · *BR-11 · Black Friday early access*\n2 statics · due 2026-10-26 · <@Louise>"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Why*\n• Discount of 50% is above the 30% cap."
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Draft for #ext-ridge-outdoor* (review before posting)\n>Hi team, before we start on \"Black Friday early access\", one quick check: the brief says 50% off, but our agreed cap is 30%. Should we go with 30% (or lower)?\n>As soon as we hear back, it goes straight into production."
+        }
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Post to client channel"
+            },
+            "action_id": "post_draft",
+            "value": "BR-11"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Edit draft"
+            },
+            "action_id": "edit_draft",
+            "value": "BR-11"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Override block"
+            },
+            "action_id": "override",
+            "value": "BR-11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "channel": "#int-ridge-outdoor",
+    "text": "Needs approval: BR-15 Bottle quick static",
+    "blocks": [
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Needs approval* · *BR-15 · Bottle quick static*\n1 statics · due 2026-10-14 · <@Louise>"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Why*\n• Due Wed 14 Oct is 1 business day(s) out; statics need 3. Earliest normal date: Fri 16 Oct. Juliana said rush ok, but only the Squad Lead (Louise) can approve a rush."
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*If you don't approve, send the client:*\n>Hi team, before we start on \"Bottle quick static\", one quick check: could we move the due date to Friday 16 October? That gives the team the time this needs.\n>As soon as we hear back, it goes straight into production."
+        }
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Approve rush"
+            },
+            "action_id": "approve_rush",
+            "value": "BR-15"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Ask client instead"
+            },
+            "action_id": "post_draft",
+            "value": "BR-15"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Override block"
+            },
+            "action_id": "override",
+            "value": "BR-15"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "channel": "#int-pawfect-treats",
+    "text": "Needs approval: BR-16 Dental chews UGC",
+    "blocks": [
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Needs approval* · *BR-16 · Dental chews UGC*\n2 videos · due 2026-10-28 · <@Bea A.>"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Why*\n• Would take Pawfect Treats over this month's plan: videos 6/4."
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*If you don't approve, send the client:*\n>Hi team, before we start on \"Dental chews UGC\", one quick check: this would take you past this month's plan (videos 6/4). Should we schedule it for next month, or add it as extra work?\n>As soon as we hear back, it goes straight into production."
+        }
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Approve overage"
+            },
+            "action_id": "approve_overage",
+            "value": "BR-16"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Ask client instead"
+            },
+            "action_id": "post_draft",
+            "value": "BR-16"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Override block"
+            },
+            "action_id": "override",
+            "value": "BR-16"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "channel": "#int-halo-sleep",
+    "text": "Blocked: BR-19 Pillow spray claims test",
+    "blocks": [
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Blocked* · *BR-19 · Pillow spray claims test*\n2 statics · due 2026-10-22 · <@Bea A.>"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Why*\n• Copy uses banned claim 'cure'.\n• Copy uses banned claim 'insomnia'.\n• Copy uses banned claim 'clinically proven'.\n• Breaks Brain rule \"Wellness, not medical: no insomnia, cure or treatment claims.\" ('Clinically proven to cure insomnia in 7 nights').\n• Breaks Brain rule \"'Clinically proven' only with a linked study (none exists today).\" ('Clinically proven')."
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Draft for #ext-halo-sleep* (review before posting)\n>Hi team, before we start on \"Pillow spray claims test\", one quick check: the copy includes \"cure\", \"insomnia\" and \"clinically proven\", which are on the list of claims we've agreed not to use. Could you share an alternative line?\n>As soon as we hear back, it goes straight into production."
+        }
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Post to client channel"
+            },
+            "action_id": "post_draft",
+            "value": "BR-19"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Edit draft"
+            },
+            "action_id": "edit_draft",
+            "value": "BR-19"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Override block"
+            },
+            "action_id": "override",
+            "value": "BR-19"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "channel": "#int-brightside-kids",
+    "text": "Blocked (internal): BR-22 Back-to-school lunchbox",
+    "blocks": [
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Blocked (internal)* · *BR-22 · Back-to-school lunchbox*\n2 statics · due 2026-10-23 · <@Bea A.>"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Why*\n• Brightside Kids is paused: Paused 2026-10-05 pending overdue invoice. No new production until finance un-pauses."
+        }
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Override block"
+            },
+            "action_id": "override",
+            "value": "BR-22"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "channel": "#int-lumen-skin",
+    "text": "Blocked: BR-25 Moisturiser texture video",
+    "blocks": [
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Blocked* · *BR-25 · Moisturiser texture video*\n1 videos · due 2026-10-26 · <@Louise>"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Why*\n• Copy uses banned claim 'cura'.\n• Breaks Brain rule \"Cosmetic, not medical: never claim to treat, cure or heal a skin condition.\" ('a cura para a pele seca')."
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Draft for #ext-lumen-skin* (review before posting)\n>Hi team, before we start on \"Moisturiser texture video\", one quick check: the copy includes \"cura\", which is on the list of claims we've agreed not to use. Could you share an alternative line?\n>As soon as we hear back, it goes straight into production."
+        }
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Post to client channel"
+            },
+            "action_id": "post_draft",
+            "value": "BR-25"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Edit draft"
+            },
+            "action_id": "edit_draft",
+            "value": "BR-25"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Override block"
+            },
+            "action_id": "override",
+            "value": "BR-25"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "channel": "#int-northpeak-coffee",
+    "text": "Blocked: BR-29 Subscription perks statics",
+    "blocks": [
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Blocked* · *BR-29 · Subscription perks statics*\n2 statics · due 2026-10-22 · <@Louise>"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Why*\n• Breaks Brain rule \"No superlatives we can't prove.\" ('The best-tasting subscription in the UK.')."
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Draft for #ext-northpeak-coffee* (review before posting)\n>Hi team, before we start on \"Subscription perks statics\", one quick check: \"The best-tasting subscription in the UK.\" goes against a brand rule we have on file (\"No superlatives we can't prove\"). Could you share an alternative?\n>As soon as we hear back, it goes straight into production."
+        }
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Post to client channel"
+            },
+            "action_id": "post_draft",
+            "value": "BR-29"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Edit draft"
+            },
+            "action_id": "edit_draft",
+            "value": "BR-29"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Override block"
+            },
+            "action_id": "override",
+            "value": "BR-29"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "channel": "#int-halo-sleep",
+    "text": "Blocked (internal): BR-30 Eye mask static",
+    "blocks": [
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Blocked (internal)* · *BR-30 · Eye mask static*\n1 statics · due 2026-10-21 · <@Bea A.>"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": "*Why*\n• Couldn't confirm the copy follows \"Wellness, not medical: no insomnia, cure or treatment claims.\". A person should check it."
+        }
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Copy is fine, re-run"
+            },
+            "action_id": "mark_copy_ok",
+            "value": "BR-30"
+          },
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Override block"
+            },
+            "action_id": "override",
+            "value": "BR-30"
+          }
+        ]
+      }
+    ]
+  }
+]

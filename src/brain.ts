@@ -19,13 +19,22 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { BRAIN_MAX_TOKENS, BRAIN_MODEL } from "./config.ts";
 import type { BrainVerdict } from "./models.ts";
 
-export const SYSTEM_PROMPT = `You check ad copy briefs against a client's brand rules.
+export const SYSTEM_PROMPT = `You check the text of an ad brief against a client's brand rules. You only see the brief's words; the ad itself is made later by a designer who also knows the rules.
 For each rule, answer:
-- "violates": the copy clearly breaks the rule. Quote the exact words in evidence.
-- "ok": the copy does not break the rule. Mentioning nothing about the rule is ok.
-- "unsure": you cannot tell from the copy alone.
+- "violates": the brief's words themselves break the rule, or ask the designer to break it. evidence = the exact words from the brief, quoted verbatim and nothing else (no explanation).
+- "ok": the words do not break the rule. This includes a brief that says nothing related to the rule: a rule about imagery is "ok" when the brief describes no imagery, and a rule about claims is "ok" when the brief makes no such claim. Silence is never a violation.
+- "unsure": the brief explicitly describes something that might break the rule and you cannot tell. Use this rarely. evidence = the related words, quoted.
 Ignore numeric limits such as discount caps; they are checked elsewhere, so answer "ok" for them.
-The copy may be in English or Portuguese. Judge meaning, not keywords.`;
+The brief may be in English or Portuguese. Judge meaning, not keywords.
+
+Examples for the rule "Always show the can or bag, never a generic cup":
+- "First box 20% off." -> ok. The brief describes no imagery; the designer will follow the rule.
+- "Cosy autumn flavour, limited run." -> ok. Same reason.
+- "Barista pours into a takeaway cup." -> violates. The brief asks for a generic cup.
+- "Close-up of the drink being poured." -> unsure. It describes imagery but not the container.`;
+
+// Bump when the prompt changes so cached answers from an older prompt are not reused.
+export const PROMPT_VERSION = "v3";
 
 export const RESPONSE_SCHEMA = {
   type: "object",
@@ -64,6 +73,7 @@ export interface MessagesClient {
     create(params: Record<string, unknown>): Promise<{
       stop_reason: string | null;
       content: Array<{ type: string; text?: string }>;
+      usage?: { input_tokens: number; output_tokens: number };
     }>;
   };
 }
@@ -73,11 +83,12 @@ export interface BrainCheck {
 }
 
 export function cacheKey(model: string, client: string, rules: string[], text: string): string {
-  return createHash("sha256").update(JSON.stringify([model, client, rules, text])).digest("hex");
+  return createHash("sha256").update(JSON.stringify([model, PROMPT_VERSION, client, rules, text])).digest("hex");
 }
 
 export class BrainChecker implements BrainCheck {
-  stats = { cache_hits: 0, live_calls: 0, unchecked: 0 };
+  // Token counts come from the API's usage field, so a live run reports what it really cost.
+  stats = { cache_hits: 0, live_calls: 0, unchecked: 0, input_tokens: 0, output_tokens: 0 };
   private cache = new Map<string, CacheEntry>();
   private cachePath: string | null;
   private live: boolean;
@@ -143,6 +154,8 @@ export class BrainChecker implements BrainCheck {
     if (response.stop_reason !== "end_turn") {
       throw new Error(`unexpected stop_reason ${response.stop_reason}`);
     }
+    this.stats.input_tokens += response.usage?.input_tokens ?? 0;
+    this.stats.output_tokens += response.usage?.output_tokens ?? 0;
     const block = response.content.find((b) => b.type === "text");
     const data = JSON.parse(block?.text ?? "") as { verdicts: Array<{ rule_index: number; verdict: BrainVerdict["verdict"]; evidence: string }> };
     const byIndex = new Map(data.verdicts.map((v) => [v.rule_index, v]));

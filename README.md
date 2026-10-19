@@ -26,7 +26,7 @@ This reads `data/option_b_gate/` and writes dry-run outputs to `out/`:
 
 Options:
 - `npm run gate -- --now 2026-10-14T09:00:00Z` sets the check time.
-- `npm run gate -- --live` calls Claude Haiku 5.5 on Brain-rule cache misses. It needs Anthropic credentials (`ANTHROPIC_API_KEY`).
+- `npm run gate:live` calls Claude Haiku 5.5 for real, writing to `cache/live_run.json` and `out/live/`. Put your key in `.env` as `ANTHROPIC_API_KEY=...` (the file is git-ignored). Then `npm run compare -- out/live/results.json` checks it against the answer key.
 
 ## Test
 

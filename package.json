@@ -7,7 +7,7 @@
   "engines": { "node": ">=23.6" },
   "scripts": {
     "gate": "node src/cli.ts",
-    "gate:live": "node src/cli.ts --live",
+    "gate:live": "node --env-file-if-exists=.env src/cli.ts --live --cache cache/live_run.json --out out/live",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "compare": "node scripts/compare-to-key.ts"
